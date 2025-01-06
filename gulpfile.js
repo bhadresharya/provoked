@@ -5,21 +5,21 @@ var browserSync = require('browser-sync').create();
 gulp.task('browserSync', function () {
     browserSync.init({
         server: {
-            baseDir: 'app'
+            baseDir: 'docs'
         }
     })
 })
 
 gulp.task('sass', async function () {
-    return gulp.src('app/scss/**.scss')
+    return gulp.src('docs/scss/**.scss')
         .pipe(sass())
-        .pipe(gulp.dest('app/css'))
+        .pipe(gulp.dest('docs/css'))
         .pipe(browserSync.reload({
             stream: true
         }))
 })
 
 gulp.task('watch', gulp.parallel('browserSync', function () {
-    gulp.watch('app/scss/**.scss', gulp.series('sass'));
-    gulp.watch('app/*.html').on('change', browserSync.reload);
+    gulp.watch('docs/scss/**.scss', gulp.series('sass'));
+    gulp.watch('docs/*.html').on('change', browserSync.reload);
 }))
