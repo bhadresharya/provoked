@@ -4,8 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp watch",
-    "version": "node version.js"
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -18,11 +17,10 @@
   },
   "homepage": "https://github.com/bhadresharya/provoked#readme",
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.2.3",
     "browser-sync": "^2.27.11",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.82.0",
-    "semver": "^7.6.3"
+    "node-sass": "^8.0.0"
   }
 }
