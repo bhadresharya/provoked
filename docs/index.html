@@ -31,7 +31,7 @@
                         <span class="nav-line-2"></span>
                         <span class="nav-line-3"></span>
                     </div>
-                    <span class="btn-navbar-text">Menu</span>
+                    <span class="btn-navbar-text"></span>
                 </button>
                 <div class="menu">
                     <div class="tiles">
@@ -66,7 +66,7 @@
                             <div class="tiles__line-img" style="background-image:url(images/img/9.jpg)"></div>
                         </div>
                     </div>
-                    <nav class="menu-wrap">
+                    <!-- <nav class="menu-wrap">
                         <a class="menu__item">
                             <span class="menu__item-text">home</span>
                         </a>
@@ -79,7 +79,7 @@
                         <a class="menu__item">
                             <span class="menu__item-text">contact</span>
                         </a>
-                    </nav>
+                    </nav> -->
                 </div>
             </div>
         </nav>
@@ -93,84 +93,8 @@
         </div>
     </header>
     <main>
-        <section class="about">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>Our Story, Your Success</h2>
-                    <h3>Turning Passion into Purpose for Your Brand’s Growth</h3>
-                </div>
-                <div class="m-auto text-center mb-5">
-
-                    <p class="lead mb-3">At Provoked Pixels, we are more than a digital marketing agency — we are your
-                        creative partners in growth. Our journey began with a vision to empower businesses with
-                        innovative, result-driven strategies that resonate in a digital-first world.</p>
-
-                    <p class="lead mb-3">From crafting captivating designs to implementing data-driven marketing
-                        campaigns,
-                        we blend
-                        creativity with technology to deliver solutions that make a difference. With a team of
-                        passionate professionals, we are dedicated to understanding your brand, amplifying your voice,
-                        and driving measurable success.</p>
-
-                    <p class="lead">Let’s provoke possibilities together and transform your ideas into impactful digital
-                        experiences.</p>
-                </div>
-            </div>
-            <div class="project-statistics">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 ps-item">
-                            <p class="display-4 fw-bold">10<span>+</span></p>
-                            <p>Successful Projects</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6 ps-item">
-                            <p class="display-4 fw-bold">9<span>+</span></p>
-                            <p>Super Happy Client</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6 ps-item">
-                            <p class="display-4 fw-bold">100<span>%</span></p>
-                            <p>Client Satisfaction Rate</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <p class="mb-3">Are you ready to take your business to the next level? Take the first step
-                                towards
-                                digital
-                                marketing success today and start reaching your business goals.</p>
-                            <a href="#contact" class="btn btn-sm btn-outline-light rounded-pill px-4">Contact us </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="services">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>What We Bring to the Table</h2>
-                    <h3>Innovative Solutions for a Digital-First World</h3>
-                </div>
-        <div class="container">
-            <section class="project-statistics">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <p class="display-4 fw-bold">10<span>+</span></p>
-                        <p>Successful Projects</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p class="display-4 fw-bold">9<span>+</span></p>
-                        <p>Super Happy Client</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p class="display-4 fw-bold">100<span>%</span></p>
-                        <p>Client Satisfaction Rate</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p>Are you ready to take your business to the next level? Take the first step towards digital
-                            marketing success today and start reaching your business goals.</p>
-                    </div>
-                </div>
-            </section>
-            <section class="services">
+            <div class="container"> 
                 <ul class="nav text-uppercase owl-carousel">
                     <li class="h1 fw-bold" style="font-style: italic;">
                         UI/UX DESIGNING
@@ -191,12 +115,9 @@
                         Branding
                     </li>
                 </ul>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
-    <footer>
-        <div class="p-5"></div>
-    </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
@@ -214,6 +135,7 @@
                     $(document.body).addClass("overflow-hidden");
                 }, 500);
             }
+            
             if ($(".btn-1").hasClass("toggle-1")) {
                 $(".btn-1").removeClass("toggle-1");
             } else {
@@ -221,7 +143,7 @@
             }
             if ($(".btn-navbar").hasClass("btn-light")) {
                 $(".btn-navbar").removeClass("btn-light");
-                $(".btn-navbar-text").text("Menu")
+                $(".btn-navbar-text").text("")
             } else {
                 $(".btn-navbar").addClass("btn-light");
                 $(".btn-navbar-text").text("Close")

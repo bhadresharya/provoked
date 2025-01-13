@@ -12070,3 +12070,6 @@ main .services .nav li:last-child:after {
   border-radius: 50%;
   border: 1px solid #dee2e6;
 }
+main .footer .nav-link {
+  margin: 0 0.25rem;
+}
