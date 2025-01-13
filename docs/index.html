@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Provoked Pixels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,8 +15,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,900;1,300&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -21,234 +22,148 @@
     <header class="pt-3 pt-md-4 pt-xl-5">
         <nav class="navbar">
             <div class="container">
-                <a class="navbar-brand ms-auto me-auto" href="#">
-                    <img src="images/logo.svg" class="logo">
+                <a class="navbar-brand ms-0" href="#">
+                    <img src="images/logo.svg" class="img-fluid" style="height: 35px;">
                 </a>
+                <button class="btn btn-navbar">
+                    <div class="navbar-toggle btn-1">
+                        <span class="nav-line-1"></span>
+                        <span class="nav-line-2"></span>
+                        <span class="nav-line-3"></span>
+                    </div>
+                    <span class="btn-navbar-text"></span>
+                </button>
+                <div class="menu">
+                    <div class="tiles">
+                        <div class="tiles__line">
+                            <div class="tiles__line-img tiles__line-img--large"
+                                style="background-image:url(images/img/4.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/5.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/6.jpg)"></div>
+                            <div class="tiles__line-img tiles__line-img--large"
+                                style="background-image:url(images/img/4.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/5.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/6.jpg)"></div>
+                        </div>
+                        <div class="tiles__line">
+                            <div class="tiles__line-img" style="background-image:url(images/img/1.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/2.jpg)"></div>
+                            <div class="tiles__line-img tiles__line-img--large"
+                                style="background-image:url(images/img/3.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/1.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/2.jpg)"></div>
+                            <div class="tiles__line-img tiles__line-img--large"
+                                style="background-image:url(images/img/3.jpg)"></div>
+                        </div>
+                        <div class="tiles__line">
+                            <div class="tiles__line-img" style="background-image:url(images/img/7.jpg)"></div>
+                            <div class="tiles__line-img tiles__line-img--large"
+                                style="background-image:url(images/img/8.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/9.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/7.jpg)"></div>
+                            <div class="tiles__line-img tiles__line-img--large"
+                                style="background-image:url(images/img/8.jpg)"></div>
+                            <div class="tiles__line-img" style="background-image:url(images/img/9.jpg)"></div>
+                        </div>
+                    </div>
+                    <!-- <nav class="menu-wrap">
+                        <a class="menu__item">
+                            <span class="menu__item-text">home</span>
+                        </a>
+                        <a class="menu__item">
+                            <span class="menu__item-text">expertise</span>
+                        </a>
+                        <a class="menu__item">
+                            <span class="menu__item-text">works</span>
+                        </a>
+                        <a class="menu__item">
+                            <span class="menu__item-text">contact</span>
+                        </a>
+                    </nav> -->
+                </div>
             </div>
         </nav>
         <div class="container">
-            <div class="section-heading">
-                <h2>The Creative Digital Agency</h2>
-                <h3>Crafting Digital Stories That Resonate</h3>
-            </div>
-            <div class="text-center mb-5">
-                <a href="#contact" class="btn btn-outline-light rounded-pill px-lg-5 px-4 py-lg-3 fs-3 border-3 d-block d-sm-inline mb-3 mb-sm-0">
-                    Get Started!
-                </a>
-                <a href="#works" class="btn btn-outline-light rounded-pill px-lg-5 px-4 py-lg-3 ms-0 ms-sm-3 fs-3 border-3 d-block d-sm-inline">
-                    View Our Work
-                </a>
-            </div>
+            <p class="display-1 fw-bolder text-uppercase py-5 py-md-4">
+                The Creative
+                <br>
+                Digital Agency
+            </p>
             <img src="images/header-hero.jpg" class="hero-image" alt="">
         </div>
     </header>
     <main>
-        <section class="about">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>Our Story, Your Success</h2>
-                    <h3>Turning Passion into Purpose for Your Brand’s Growth</h3>
-                </div>
-                <div class="m-auto text-center mb-5">
-
-                    <p class="lead mb-3">At Provoked Pixels, we are more than a digital marketing agency — we are your
-                        creative partners in growth. Our journey began with a vision to empower businesses with
-                        innovative, result-driven strategies that resonate in a digital-first world.</p>
-
-                    <p class="lead mb-3">From crafting captivating designs to implementing data-driven marketing
-                        campaigns,
-                        we blend
-                        creativity with technology to deliver solutions that make a difference. With a team of
-                        passionate professionals, we are dedicated to understanding your brand, amplifying your voice,
-                        and driving measurable success.</p>
-
-                    <p class="lead">Let’s provoke possibilities together and transform your ideas into impactful digital
-                        experiences.</p>
-                </div>
-            </div>
-            <div class="project-statistics">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 ps-item">
-                            <p class="display-4 fw-bold">10<span>+</span></p>
-                            <p>Successful Projects</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6 ps-item">
-                            <p class="display-4 fw-bold">9<span>+</span></p>
-                            <p>Super Happy Client</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6 ps-item">
-                            <p class="display-4 fw-bold">100<span>%</span></p>
-                            <p>Client Satisfaction Rate</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <p class="mb-3">Are you ready to take your business to the next level? Take the first step
-                                towards
-                                digital
-                                marketing success today and start reaching your business goals.</p>
-                            <a href="#contact" class="btn btn-sm btn-outline-light rounded-pill px-4">Contact us </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="services">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>What We Bring to the Table</h2>
-                    <h3>Innovative Solutions for a Digital-First World</h3>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 d-flex mb-4">
-                        <div class="card rounded-5 text-center p-4" style="background-color: #e9252a;">
-                            <div class="card-body">
-                                <p class="fs-2 fw-bolder mb-3">Digital Marketing Strategies</p>
-                                <p class="lead">We craft tailored digital marketing strategies designed to elevate your
-                                    brand’s online presence. From SEO and SEM to content marketing, we leverage the
-                                    latest trends and tools to attract, engage, and convert your target audience.
-                                    Whether it's building brand awareness or driving sales, our strategies deliver
-                                    measurable results.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 d-flex mb-4">
-                        <div class="card rounded-5 text-center p-4" style="background-color: #f59a22;">
-                            <div class="card-body">
-                                <p class="fs-2 fw-bolder mb-3">Social Media Management</p>
-                                <p class="lead">Let us turn your social media platforms into powerful branding and
-                                    engagement tools. From creating visually stunning posts to managing campaigns and
-                                    analyzing performance, we ensure your social presence reflects your brand’s
-                                    personality and keeps your audience coming back for more.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 d-flex mb-4">
-                        <div class="card rounded-5 text-center p-4" style="background-color: #f05a27;">
-                            <div class="card-body">
-                                <p class="fs-2 fw-bolder mb-3">Branding and Design</p>
-                                <p class="lead">Your brand deserves a memorable identity. At Provoked Pixels, we
-                                    specialize in crafting logos, visuals, and brand guidelines that capture your
-                                    essence. Our designs are not just aesthetically pleasing but also strategically
-                                    aligned to tell your brand’s story and make a lasting impact.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-carousel">
-                <div class="container">
-                    <ul class="nav text-uppercase owl-carousel">
-                        <li class="h1">
-                            UI/UX DESIGNING
-                        </li>
-                        <li class="h1">
-                            Web DESIGNING
-                        </li>
-                        <li class="h1">
-                            GRAPHIC DESIGNING
-                        </li>
-                        <li class="h1">
-                            DIGITAL MARKETING
-                        </li>
-                        <li class="h1">
-                            SEO
-                        </li>
-                        <li class="h1">
-                            Branding
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="works" id="works">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>Our Creative Showcase</h2>
-                    <h3>Because Actions Speak Louder Than Words</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <a href="#">
-                            <img src="./images/works-6.jpg" class="img-fluid rounded-5 shadow" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <a href="#">
-                            <img src="./images/works-1.jpg" class="img-fluid rounded-5 shadow" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <a href="#">
-                            <img src="./images/works-5.jpg" class="img-fluid rounded-5 shadow" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="contact" id="contact">
-            <div class="container">
-                <div class="card shadow-lg rounded-5" style="
-                background: var(--bs-gray-800);
-                padding-bottom: 5rem;
-            ">
-                    <div class="card-body">
-                        <div class="section-heading">
-                            <h2>Let’s Start Something Great Together</h2>
-                            <h3>We’re Just One Click Away from Your Next Big Idea</h3>
-                        </div>
-                        <div class="text-center">
-                            <a href="mailto:hello@provoked.in"
-                                class="btn btn-outline-light rounded-pill px-5 py-3 fs-1">
-                                hello@provoked.in
-                            </a>
-                            <a href="tell:+919228191969" class="btn btn-outline-light rounded-pill px-5 py-3 fs-1 ms-3">
-                                (+91) 9228191969
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer class="footer">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>Stay Connected with Us</h2>
-                    <h3>Provoking Pixels, Inspiring Possibilities</h3>
-                </div>
-                <ul class="nav ft-sm-links justify-content-center">
-                    <li class="nav-item mx-1">
-                        <a href="https://www.behance.net/provokedpixels" target="_blank"
-                            class="btn btn-light rounded-pill">
-                            Behance
-                        </a>
+            <div class="container"> 
+                <ul class="nav text-uppercase owl-carousel">
+                    <li class="h1 fw-bold" style="font-style: italic;">
+                        UI/UX DESIGNING
                     </li>
-                    <li class="nav-item mx-1">
-                        <a href="https://dribbble.com/provokedpixels" target="_blank"
-                            class="btn btn-light rounded-pill">
-                            Dribbble
-                        </a>
+                    <li class="h1 fw-bold" style="font-style: italic;">
+                        Web DESIGNING
                     </li>
-                    <li class="nav-item mx-1">
-                        <a href="https://www.instagram.com/provoked.pixels/" target="_blank"
-                            class="btn btn-light rounded-pill">
-                            Instagram
-                        </a>
+                    <li class="h1 fw-bold" style="font-style: italic;">
+                        GRAPHIC DESIGNING
+                    </li>
+                    <li class="h1 fw-bold" style="font-style: italic;">
+                        DIGITAL MARKETING
+                    </li>
+                    <li class="h1 fw-bold" style="font-style: italic;">
+                        SEO
+                    </li>
+                    <li class="h1 fw-bold" style="font-style: italic;">
+                        Branding
                     </li>
                 </ul>
-                <p class="text-center text-muted mt-5 small">© 2024 Provoked Pixels. All Rights Reserved</p>
             </div>
-        </footer>
+        </section>
     </main>
-    <footer>
-        <div class="p-5"></div>
-    </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        $(".btn-navbar").on('click', function (event) {
+            event.preventDefault();
+            if ($(document.body).hasClass("overflow-hidden")) {
+                setTimeout(function () {
+                    $(document.body).removeClass("overflow-hidden");
+                }, 500);
+            } else {
+                setTimeout(function () {
+                    $(document.body).addClass("overflow-hidden");
+                }, 500);
+            }
+            
+            if ($(".btn-1").hasClass("toggle-1")) {
+                $(".btn-1").removeClass("toggle-1");
+            } else {
+                $(".btn-1").addClass("toggle-1");
+            }
+            if ($(".btn-navbar").hasClass("btn-light")) {
+                $(".btn-navbar").removeClass("btn-light");
+                $(".btn-navbar-text").text("")
+            } else {
+                $(".btn-navbar").addClass("btn-light");
+                $(".btn-navbar-text").text("Close")
+            }
+            if ($(".menu").hasClass("show")) {
+                $(".menu").addClass("close-transition")
+                setTimeout(
+                    function hidemenu() {
+                        $(".menu").removeClass("show")
+                        $(".menu").removeClass("close-transition")
+                    }, 500);
+            } else {
+                $(".menu").addClass("show")
+            }
+            $(this).prop('disabled', true);
+            setTimeout(function () {
+                $(".btn-navbar").prop('disabled', false);
+            }, 500)
+        });
+
         $(document).ready(function () {
             $(".owl-carousel").owlCarousel({
                 autoWidth: true,
