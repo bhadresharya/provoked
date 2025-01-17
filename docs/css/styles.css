@@ -595,7 +595,7 @@ progress {
 
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
@@ -606,7 +606,7 @@ progress {
 
 .display-2 {
   font-size: calc(1.575rem + 3.9vw);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
@@ -617,7 +617,7 @@ progress {
 
 .display-3 {
   font-size: calc(1.525rem + 3.3vw);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
@@ -628,7 +628,7 @@ progress {
 
 .display-4 {
   font-size: calc(1.475rem + 2.7vw);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
@@ -639,7 +639,7 @@ progress {
 
 .display-5 {
   font-size: calc(1.425rem + 2.1vw);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
@@ -650,7 +650,7 @@ progress {
 
 .display-6 {
   font-size: calc(1.375rem + 1.5vw);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
@@ -11848,13 +11848,8 @@ textarea.form-control-lg {
 }
 
 header {
-  background: #ECE9E6;
+  background: #fff;
   color: #1e1e20;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FAFAFA, #ECE9E6);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FAFAFA, #ECE9E6);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
