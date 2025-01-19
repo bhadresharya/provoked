@@ -12065,6 +12065,18 @@ main .services .nav li:last-child:after {
   border-radius: 50%;
   border: 1px solid #dee2e6;
 }
+main .works .col-4 {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+main .works .col-4 h4, main .works .col-4 .h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 1.5rem;
+  left: 2.5rem;
+}
 main .footer .nav-link {
   margin: 0 0.25rem;
 }

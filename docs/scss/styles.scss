@@ -301,6 +301,21 @@ main {
         }
     }
 
+    .works {
+        .col-4 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            h4 {
+                text-transform: uppercase;
+                font-weight: bold;
+                margin: 0;
+                position: absolute;
+                top: 1.5rem;
+                left: 2.5rem;
+            }
+        }
+    }
+
     .footer {
         .nav-link {
             margin: 0 .25rem;
