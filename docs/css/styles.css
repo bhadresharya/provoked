@@ -12682,6 +12682,28 @@ body main section.hero .project-statistics .nav-justified li .nav-link {
   line-height: 1.4;
 }
 
+figure {
+  overflow: hidden;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+figure img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+figure:hover {
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+}
+figure:hover img {
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
 body {
   padding: 1rem;
 }

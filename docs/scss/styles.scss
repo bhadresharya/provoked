@@ -45,6 +45,31 @@ $logo-color-4: #fbd00d;
     line-height: 1.4;
 }
 
+figure {
+    overflow: hidden;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+
+    img {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .4s ease-in-out;
+        transition: .4s ease-in-out;
+    }
+
+    &:hover {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+
+        img {
+            -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+        }
+    }
+}
+
 body {
     padding: 1rem;
 
