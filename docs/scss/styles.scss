@@ -45,6 +45,38 @@ $logo-color-4: #fbd00d;
     line-height: 1.4;
 }
 
+a {
+    position: relative;
+    padding-left: 1rem;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    font-weight: 500;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid;
+        border-right: 2px solid;
+        transform: rotate(45deg);
+        margin: auto;
+        -webkit-transition: 0.2sease-in-out;
+        transition: 0.2sease-in-out;
+    }
+
+    &:hover {
+        padding-left: 0;
+
+        &::before {
+            left: 105%;
+        }
+    }
+}
+
 figure {
     overflow: hidden;
     -webkit-transform: scale(1);
