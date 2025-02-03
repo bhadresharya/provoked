@@ -1,7 +1,7 @@
+@import "../../node_modules/aos/dist/aos";
 @import "../../node_modules/bootstrap/scss/functions";
 @import "./variables";
-@import "./bootstrap.scss";
-@import "../../node_modules/aos/dist/aos.css";
+@import "./bootstrap";
 
 $logo-color-1: #e9252a;
 $logo-color-2: #f59a22;
@@ -65,8 +65,8 @@ a {
         border-right: 2px solid;
         transform: rotate(45deg);
         margin: auto;
-        -webkit-transition: 0.2sease-in-out;
-        transition: 0.2sease-in-out;
+        -webkit-transition: 0.2s ease-in-out;
+        transition: 0.2s ease-in-out;
     }
 
     &:hover {
