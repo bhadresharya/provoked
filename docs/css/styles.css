@@ -13697,6 +13697,15 @@ body {
 body main {
   background-color: #e9ecef;
 }
+body main section .heading::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: -3.5rem;
+  height: 3.5rem;
+  width: 0.5rem;
+  background-color: #e9252a;
+}
 body main section.hero {
   padding-top: 15rem;
 }

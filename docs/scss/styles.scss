@@ -118,6 +118,16 @@ body {
 
             .heading {
                 @extend .mb-4;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 1rem;
+                    left: -3.5rem;
+                    height: 3.5rem;
+                    width: .5rem;
+                    background-color: $primary;
+                }
             }
 
             .sub-heading {
