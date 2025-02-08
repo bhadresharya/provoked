@@ -8976,7 +8976,7 @@ body main section.hero .project-statistics .nav-justified li .nav-link {
   margin-top: 1.5rem !important;
 }
 
-.mt-5, body main section.projects > .row ~ .row, body main section.services .service-list > li ~ li {
+.mt-5, body main section.projects > .project ~ .project, body main section.services .service-list > li ~ li {
   margin-top: 3rem !important;
 }
 

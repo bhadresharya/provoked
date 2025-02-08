@@ -216,7 +216,7 @@ body {
             }
 
             &.projects {
-                &>.row~.row {
+                &>.project~.project {
                     @extend .mt-5;
                 }
             }
