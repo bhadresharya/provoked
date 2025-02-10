@@ -46,7 +46,7 @@ $logo-color-4: #fbd00d;
     line-height: 1.4;
 }
 
-a {
+a:not(.nav-link, .navbar-brand) {
     position: relative;
     padding-left: 1rem;
     -webkit-transition: .2s ease-in-out;
@@ -149,6 +149,19 @@ body {
 
     main {
         background-color: $gray-200;
+
+        header.header {
+            position: sticky;
+            top: -2rem;
+            padding-top: 3rem;
+            background-color: rgba($gray-200, .9);
+            z-index: $zindex-sticky;
+            backdrop-filter: blur(10px);
+
+            .logo {
+                width: 150px;
+            }
+        }
 
         section {
             @extend .pb-5;
