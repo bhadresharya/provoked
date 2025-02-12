@@ -13749,7 +13749,7 @@ body main section .heading::before {
   background-color: #e9252a;
 }
 body main section.hero {
-  padding-top: 15rem;
+  padding-top: 10rem;
 }
 body main section.services .service-list > li li {
   list-style-type: disc;
