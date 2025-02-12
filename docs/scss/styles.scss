@@ -141,13 +141,9 @@ figure {
 }
 
 body {
-    padding: 1rem;
-
-    @include media-breakpoint-down(md) {
-        padding: 0;
-    }
 
     main {
+        width: 100%;
         background-color: $gray-200;
 
         header.header {

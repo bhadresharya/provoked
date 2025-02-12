@@ -13717,15 +13717,8 @@ figure:hover img {
     opacity: 1;
   }
 }
-body {
-  padding: 1rem;
-}
-@media (max-width: 767.98px) {
-  body {
-    padding: 0;
-  }
-}
 body main {
+  width: 100%;
   background-color: #e9ecef;
 }
 body main header.header {
