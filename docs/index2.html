@@ -332,11 +332,13 @@
             return (1 - n) * a + n * b;
         }
 
+        // Animate on Scroll JS
         AOS.init({
             offset: 50,
             easing: 'ease-out',
         });
 
+        // Typewriter effect JS
         var TxtType = function (el, toRotate, period) {
             this.toRotate = toRotate;
             this.el = el;
@@ -387,11 +389,6 @@
                     new TxtType(elements[i], JSON.parse(toRotate), period);
                 }
             }
-            // INJECT CSS
-            // var css = document.createElement("style");
-            // css.type = "text/css";
-            // css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff; padding-right: .5rem}";
-            // document.body.appendChild(css);
         };
     </script>
 </body>
