@@ -32,6 +32,11 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="navbar-toggler btn-1">
+                                <span class="nav-line-1"></span>
+                                <span class="nav-line-2"></span>
+                                <span class="nav-line-3"></span>
+                            </div>
                         </nav>
                     </div>
                 </div>
@@ -265,6 +270,8 @@
         </div>
     </main>
     <div class="bd-brd"></div>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" type="text/javascript"></script>
     <script>
         // from http://inertia-momentum-scroll.webflow.io/vanilla-js-version 
@@ -337,6 +344,12 @@
             offset: 50,
             easing: 'ease-out',
         });
+
+        // btn toggle JS
+        $(".btn-1").on("click", function () {
+            $(".btn-1").toggleClass("toggle-1");
+        });
+
 
         // Typewriter effect JS
         var TxtType = function (el, toRotate, period) {
