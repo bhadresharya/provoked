@@ -142,75 +142,77 @@ figure {
 
 body {
 
-    main {
-        width: 100%;
-        background-color: $gray-200;
+    header.header {
+        position: sticky;
+        top: -2rem;
+        padding-top: 3rem;
+        background-color: rgba($gray-200, .9);
+        z-index: $zindex-sticky;
+        backdrop-filter: blur(10px);
 
-        header.header {
-            position: sticky;
-            top: -2rem;
-            padding-top: 3rem;
-            background-color: rgba($gray-200, .9);
-            z-index: $zindex-sticky;
-            backdrop-filter: blur(10px);
+        .logo {
+            width: 150px;
+        }
 
-            .logo {
-                width: 150px;
+        .navbar-toggler {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            position: relative;
+
+            span {
+                position: absolute;
+                left: 0;
+                height: 2px;
+                border-radius: 1px;
+                background: $primary;
+                transition: 0.25s all cubic-bezier(1, 0, 0, 1);
+                margin-right: .25rem;
             }
 
-            .navbar-toggler {
-                background: none;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                width: 25px;
-                height: 25px;
-                position: relative;
+            .nav-line-1 {
+                width: 20px;
+                top: 5px;
+            }
 
-                span {
-                    position: absolute;
-                    left: 0;
-                    height: 2px;
-                    border-radius: 1px;
-                    background: $primary;
-                    transition: 0.25s all cubic-bezier(1, 0, 0, 1);
-                    margin-right: .25rem;
-                }
+            .nav-line-2 {
+                width: 10px;
+                top: 12px;
+            }
+
+            .nav-line-3 {
+                width: 14px;
+                top: 19px;
+            }
+
+            &.toggle-1 {
 
                 .nav-line-1 {
-                    width: 20px;
-                    top: 5px;
+                    top: 11px;
+                    transform: rotate(45deg);
                 }
 
                 .nav-line-2 {
-                    width: 10px;
-                    top: 12px;
+                    opacity: 0;
                 }
 
                 .nav-line-3 {
-                    width: 14px;
-                    top: 19px;
-                }
-
-                &.toggle-1 {
-
-                    .nav-line-1 {
-                        top: 11px;
-                        transform: rotate(45deg);
-                    }
-
-                    .nav-line-2 {
-                        opacity: 0;
-                    }
-
-                    .nav-line-3 {
-                        top: 11px;
-                        transform: rotate(-45deg);
-                        width: 20px;
-                    }
+                    top: 11px;
+                    transform: rotate(-45deg);
+                    width: 20px;
                 }
             }
         }
+    }
+
+    main {
+        width: 100%;
+        padding: 1rem;
+        padding-top: 20rem;
+        background-color: $gray-200;
 
         section {
             @extend .pb-5;
@@ -235,7 +237,6 @@ body {
             }
 
             &.hero {
-                padding-top: 10rem;
 
                 .project-statistics {
                     @extend .nav;
@@ -283,5 +284,13 @@ body {
                 }
             }
         }
+
+        footer.footer {
+            padding-bottom: 1rem;
+            .logo {
+                width: 150px;
+            }
+        }
     }
+
 }

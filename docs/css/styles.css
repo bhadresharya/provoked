@@ -10038,11 +10038,7 @@ figure:hover img {
     opacity: 1;
   }
 }
-body main {
-  width: 100%;
-  background-color: #e9ecef;
-}
-body main header.header {
+body header.header {
   position: sticky;
   top: -2rem;
   padding-top: 3rem;
@@ -10050,10 +10046,10 @@ body main header.header {
   z-index: 1020;
   backdrop-filter: blur(10px);
 }
-body main header.header .logo {
+body header.header .logo {
   width: 150px;
 }
-body main header.header .navbar-toggler {
+body header.header .navbar-toggler {
   background: none;
   border: none;
   outline: none;
@@ -10062,7 +10058,7 @@ body main header.header .navbar-toggler {
   height: 25px;
   position: relative;
 }
-body main header.header .navbar-toggler span {
+body header.header .navbar-toggler span {
   position: absolute;
   left: 0;
   height: 2px;
@@ -10071,29 +10067,35 @@ body main header.header .navbar-toggler span {
   transition: 0.25s all cubic-bezier(1, 0, 0, 1);
   margin-right: 0.25rem;
 }
-body main header.header .navbar-toggler .nav-line-1 {
+body header.header .navbar-toggler .nav-line-1 {
   width: 20px;
   top: 5px;
 }
-body main header.header .navbar-toggler .nav-line-2 {
+body header.header .navbar-toggler .nav-line-2 {
   width: 10px;
   top: 12px;
 }
-body main header.header .navbar-toggler .nav-line-3 {
+body header.header .navbar-toggler .nav-line-3 {
   width: 14px;
   top: 19px;
 }
-body main header.header .navbar-toggler.toggle-1 .nav-line-1 {
+body header.header .navbar-toggler.toggle-1 .nav-line-1 {
   top: 11px;
   transform: rotate(45deg);
 }
-body main header.header .navbar-toggler.toggle-1 .nav-line-2 {
+body header.header .navbar-toggler.toggle-1 .nav-line-2 {
   opacity: 0;
 }
-body main header.header .navbar-toggler.toggle-1 .nav-line-3 {
+body header.header .navbar-toggler.toggle-1 .nav-line-3 {
   top: 11px;
   transform: rotate(-45deg);
   width: 20px;
+}
+body main {
+  width: 100%;
+  padding: 1rem;
+  padding-top: 20rem;
+  background-color: #e9ecef;
 }
 body main section .heading::before {
   content: "";
@@ -10104,10 +10106,13 @@ body main section .heading::before {
   width: 0.5rem;
   background-color: #e9252a;
 }
-body main section.hero {
-  padding-top: 10rem;
-}
 body main section.services .service-list > li li {
   list-style-type: disc;
   list-style-position: inside;
+}
+body main footer.footer {
+  padding-bottom: 1rem;
+}
+body main footer.footer .logo {
+  width: 150px;
 }
