@@ -10097,12 +10097,12 @@ body main {
   padding-top: 20rem;
   background-color: #e9ecef;
 }
-body main section .heading::before {
+body main section h1.heading::before, body main section .heading.h1::before {
   content: "";
   position: absolute;
   top: 0.75rem;
   left: -3.5rem;
-  height: 3.5rem;
+  height: 4.5rem;
   width: 0.5rem;
   background-color: #e9252a;
 }

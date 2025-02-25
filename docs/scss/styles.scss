@@ -220,15 +220,16 @@ body {
             .heading {
                 @extend .mb-4;
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: .75rem;
-                    left: -3.5rem;
-                    height: 3.5rem;
-                    width: .5rem;
-                    background-color: $primary;
-                }
+            }
+
+            h1.heading::before {
+                content: "";
+                position: absolute;
+                top: .75rem;
+                left: -3.5rem;
+                height: 4.5rem;
+                width: .5rem;
+                background-color: $primary;
             }
 
             .sub-heading {
@@ -287,6 +288,7 @@ body {
 
         footer.footer {
             padding-bottom: 1rem;
+
             .logo {
                 width: 150px;
             }
