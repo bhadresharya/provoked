@@ -237,6 +237,16 @@ body {
                 @extend .mb-5;
             }
 
+            .cta {
+                @extend .card;
+                @extend .card-body;
+                @extend .p-7;
+                @extend .text-center;
+                @extend .bg-dark;
+                @extend .text-white;
+                @extend .rounded-0;
+            }
+
             &.hero {
 
                 .project-statistics {
