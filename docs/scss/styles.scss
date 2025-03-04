@@ -240,11 +240,14 @@ body {
             .cta {
                 @extend .card;
                 @extend .card-body;
-                @extend .p-7;
                 @extend .text-center;
                 @extend .bg-dark;
                 @extend .text-white;
                 @extend .rounded-0;
+                @extend .px-4;
+                @extend .py-6;
+                @extend .p-sm-5;
+                @extend .p-lg-7;
             }
 
             &.hero {
