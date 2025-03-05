@@ -10098,9 +10098,20 @@ body header.header .navbar-toggler.toggle-1 .nav-line-3 {
 }
 body main {
   width: 100%;
+  background-color: #e9ecef;
   padding: 1rem;
   padding-top: 20rem;
-  background-color: #e9ecef;
+}
+@media (max-width: 767.98px) {
+  body main {
+    padding-top: 15rem;
+  }
+}
+@media (max-width: 575.98px) {
+  body main {
+    padding: 0rem;
+    padding-top: 10rem;
+  }
 }
 body main section h1.heading::before, body main section .heading.h1::before {
   content: "";
