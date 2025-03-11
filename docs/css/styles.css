@@ -5454,7 +5454,7 @@ body main section .cta > .list-group + .card-footer {
   padding: 4rem !important;
 }
 
-.p-7, body main section .cta {
+.p-7 {
   padding: 5rem !important;
 }
 
@@ -5478,7 +5478,7 @@ body main section .cta > .list-group + .card-footer {
   padding-left: 1rem !important;
 }
 
-.px-4 {
+.px-4, body main section .cta {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
 }
@@ -5528,7 +5528,7 @@ body main section .cta > .list-group + .card-footer {
   padding-bottom: 3rem !important;
 }
 
-.py-6 {
+.py-6, body main section .cta {
   padding-top: 4rem !important;
   padding-bottom: 4rem !important;
 }
@@ -6987,7 +6987,7 @@ body main section .cta > .list-group + .card-footer {
   .p-sm-4 {
     padding: 1.5rem !important;
   }
-  .p-sm-5 {
+  .p-sm-5, body main section .cta {
     padding: 3rem !important;
   }
   .p-sm-6 {
@@ -8313,7 +8313,7 @@ body main section .cta > .list-group + .card-footer {
   .p-lg-6 {
     padding: 4rem !important;
   }
-  .p-lg-7 {
+  .p-lg-7, body main section .cta {
     padding: 5rem !important;
   }
   .px-lg-0 {
@@ -10098,9 +10098,20 @@ body header.header .navbar-toggler.toggle-1 .nav-line-3 {
 }
 body main {
   width: 100%;
+  background-color: #e9ecef;
   padding: 1rem;
   padding-top: 20rem;
-  background-color: #e9ecef;
+}
+@media (max-width: 767.98px) {
+  body main {
+    padding-top: 15rem;
+  }
+}
+@media (max-width: 575.98px) {
+  body main {
+    padding: 0rem;
+    padding-top: 10rem;
+  }
 }
 body main section h1.heading::before, body main section .heading.h1::before {
   content: "";
