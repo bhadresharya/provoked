@@ -46,7 +46,7 @@ $logo-color-4: #fbd00d;
     line-height: 1.4;
 }
 
-a:not(.nav-link, .navbar-brand) {
+a.link {
     position: relative;
     padding-left: 1rem;
     -webkit-transition: .2s ease-in-out;
@@ -93,12 +93,12 @@ figure {
     }
 
     &:hover {
-        -webkit-transform: scale(0.95);
-        transform: scale(0.95);
+        -webkit-transform: scale(0.975);
+        transform: scale(0.975);
 
         img {
-            -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
         }
     }
 }
@@ -220,20 +220,31 @@ body {
             .heading {
                 @extend .mb-4;
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: .75rem;
-                    left: -3.5rem;
-                    height: 3.5rem;
-                    width: .5rem;
-                    background-color: $primary;
-                }
+            }
+
+            h1.heading::before {
+                content: "";
+                position: absolute;
+                top: .75rem;
+                left: -3.5rem;
+                height: 4.5rem;
+                width: .5rem;
+                background-color: $primary;
             }
 
             .sub-heading {
                 @extend .lead;
                 @extend .mb-5;
+            }
+
+            .cta {
+                @extend .card;
+                @extend .card-body;
+                @extend .p-7;
+                @extend .text-center;
+                @extend .bg-dark;
+                @extend .text-white;
+                @extend .rounded-0;
             }
 
             &.hero {
@@ -287,6 +298,7 @@ body {
 
         footer.footer {
             padding-bottom: 1rem;
+
             .logo {
                 width: 150px;
             }
