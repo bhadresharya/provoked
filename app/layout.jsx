@@ -1,4 +1,5 @@
 import Scripts from '@/components/Scripts';
+import SmoothScroll from '@/components/SmoothScroll';
 import '@/styles/globals.scss';
 
 export const metadata = {
@@ -24,7 +25,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Scripts />
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
         <div className="bd-brd"></div>
       </body>
     </html>
