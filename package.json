@@ -2,9 +2,11 @@
   "name": "provoked",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp watch"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -19,9 +21,13 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
-    "browser-sync": "^3.0.3",
-    "gulp": "^5.0.0",
-    "gulp-sass": "^6.0.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.83.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
   }
 }
