@@ -7,7 +7,7 @@ export default function Services() {
             Our Services
           </p>
           <h2 className="heading" data-aos="fade-up">
-            Innovating India's Digital Ecosystem with Smart Design & Marketing.
+            {"Innovating India's Digital Ecosystem with Smart Design & Marketing."}
           </h2>
           <p className="sub-heading col-lg-10" data-aos="fade-up">
             Through expert web design, graphic design, and AI-driven digital marketing, we empower
@@ -26,12 +26,11 @@ export default function Services() {
               <div className="col-md-9">
                 <div className="row justify-content-between">
                   <div className="col-md-6">
-                    <p className="mb-3 mb-md-2">Your website is more than just a digital
-                      presence—it's your brand's first impression. We design visually
-                      stunning, fast, and user-friendly websites that engage visitors and
-                      drive conversions. Whether it's a sleek portfolio, an e-commerce store,
-                      or a corporate site, we ensure an intuitive experience tailored to your
-                      goals.</p>
+                    <p className="mb-3 mb-md-2">
+                      {
+                        "Your website is more than just a digital presence—it's your brand's first impression. We design visually stunning, fast, and user-friendly websites that engage visitors and drive conversions. Whether it's a sleek portfolio, an e-commerce store, or a corporate site, we ensure an intuitive experience tailored to your goals."
+                      }
+                    </p>
                   </div>
                   <div className="col-md-6 col-lg-5">
                     <ul className="nav flex-column">
