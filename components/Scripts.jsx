@@ -6,30 +6,17 @@ import AOS from 'aos';
 
 export default function Scripts() {
   useEffect(() => {
-    // Initialize AOS
     AOS.init({
       offset: 25,
       easing: 'ease-out',
+      debounceDelay: 50,
+      throttleDelay: 99,
     });
   }, []);
 
   return (
     <>
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-TG66Z8ZDCP"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-TG66Z8ZDCP');
-        `}
-      </Script>
-
-      {/* Google Tag Manager */}
+      {/* GA4 should be wired via this GTM container to avoid double page views. */}
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

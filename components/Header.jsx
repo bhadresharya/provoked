@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function Header() {
   return (
     <header className="header">
@@ -5,13 +8,16 @@ export default function Header() {
         <div className="row">
           <div className="col-md-11 col-lg-10 mx-auto">
             <nav className="navbar navbar-expand-lg">
-              <a className="navbar-brand" href="#">
-                <img 
-                  src="/images/logo.svg" 
-                  className="logo" 
+              <Link className="navbar-brand" href="/" aria-label="Provoked Pixels home">
+                <Image
+                  src="/images/logo.svg"
+                  className="logo"
                   alt="Provoked Pixels Logo"
+                  width={180}
+                  height={35}
+                  priority
                 />
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
