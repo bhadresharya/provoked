@@ -1,6 +1,6 @@
 export default function Services() {
   return (
-    <section className="services">
+    <section className="services" id="services">
       <div className="row">
         <div className="col-md-10 col-lg-8 mx-auto">
           <p className="badge text-primary bg-primary-subtle rounded-pill fs-6 mb-3" data-aos="fade-up">

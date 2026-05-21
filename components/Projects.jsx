@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Projects() {
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="row">
         <div className="col-md-10 col-lg-8 mx-auto">
           <p className="badge text-primary bg-primary-subtle rounded-pill fs-6 mb-3" data-aos="fade-up">
