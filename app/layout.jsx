@@ -1,6 +1,5 @@
 import { Manrope } from 'next/font/google';
 import Scripts from '@/components/Scripts';
-import SmoothScroll from '@/components/SmoothScroll';
 import '@/styles/globals.scss';
 
 const manrope = Manrope({
@@ -27,12 +26,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={manrope.className}>
         <Scripts />
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        {children}
         <div className="bd-brd"></div>
       </body>
     </html>
   );
 }
-
