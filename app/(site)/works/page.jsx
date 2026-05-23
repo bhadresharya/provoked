@@ -1,4 +1,5 @@
 import PageHero from '@/components/PageHero';
+import WorksProjects from '@/components/works/WorksProjects';
 
 export const metadata = {
   title: 'Work — Provoked Pixels',
@@ -13,6 +14,7 @@ export default function WorksPage() {
           title="Transforming Ideas into Digital Success Stories"
           description="Explore our portfolio of successful digital transformations. Each project showcases our commitment to excellence, innovation, and delivering measurable results."
         />
+        <WorksProjects />
       </div>
     </main>
   );
