@@ -4,7 +4,7 @@ export default function PageHero({
   title,
   description,
   statistics,
-  imageSrc = '/images/header-hero.jpg',
+  imageSrc,
   imageAlt = 'Hero Image',
 }) {
   return (
@@ -33,18 +33,20 @@ export default function PageHero({
               </div>
             </div>
           </div>
-          <div className="col-12" data-aos="fade-up">
-            <figure>
-              <Image
-                src={imageSrc}
-                className="img-fluid"
-                alt={imageAlt}
-                width={1200}
-                height={600}
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </figure>
-          </div>
+          {imageSrc && (
+            <div className="col-12" data-aos="fade-up">
+              <figure>
+                <Image
+                  src={imageSrc}
+                  className="img-fluid"
+                  alt={imageAlt}
+                  width={1200}
+                  height={600}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </figure>
+            </div>
+          )}
         </div>
       </div>
     </section>

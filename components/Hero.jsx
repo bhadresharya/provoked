@@ -12,6 +12,7 @@ export default function Hero() {
       title="We create digital experiences that matter"
       description="Your vision, our expertise. We blend creativity and technology to build digital solutions that drive results for forward-thinking businesses."
       statistics={HOME_STATISTICS}
+      imageSrc="/images/header-hero.jpg"
     />
   );
 }

@@ -12,6 +12,7 @@ export default function ContactPage() {
         <PageHero
           title={"Let's Bring Your Vision to Life"}
           description="Have a project in mind? Reach out—we'd love to hear from you and help your brand grow."
+          imageSrc="/images/header-hero.jpg"
         />
       </div>
     </main>

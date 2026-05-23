@@ -32,6 +32,7 @@ export default function WorkDetailPage({ params }) {
         <PageHero
           title={title}
           description="A closer look at how we partnered with our client to deliver impactful design and digital solutions."
+          imageSrc="/images/header-hero.jpg"
         />
       </div>
     </main>
