@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import Link from 'next/link';
 
 const TILE_LINES = [
   [
@@ -32,9 +33,9 @@ const TILE_LINES = [
 
 const MENU_ITEMS = [
   { label: 'home', href: '/' },
-  { label: 'expertise', href: '#services' },
-  { label: 'works', href: '#projects' },
-  { label: 'contact', href: '#letsTalk' },
+  { label: 'expertise', href: '/expertise' },
+  { label: 'works', href: '/works' },
+  { label: 'contact', href: '/contact' },
 ];
 
 const TRANSITION_MS = 500;
@@ -75,14 +76,14 @@ export default function FullPageMenu({ isOpen, isClosing, onNavigate }) {
       </div>
       <nav className="menu-wrap" aria-label="Main navigation">
         {MENU_ITEMS.map((item) => (
-          <a
+          <Link
             key={item.label}
-            className="menu__item"
             href={item.href}
+            className="menu__item"
             onClick={onNavigate}
           >
             <span className="menu__item-text">{item.label}</span>
-          </a>
+          </Link>
         ))}
       </nav>
     </div>,
