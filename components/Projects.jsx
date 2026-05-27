@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Projects() {
   return (
@@ -53,6 +54,9 @@ export default function Projects() {
                 resonated with their audience. Additionally, our social media designs amplified
                 their presence, captivating customers with stunning creatives that highlight their
                 artistry and heritage.</p>
+              <Link href="/works" className="link">
+                View more projects
+              </Link>
             </div>
           </div>
         </div>

@@ -7,9 +7,12 @@ export default function WorksProjects() {
       {WORKS_PROJECTS.map((project) => (
         <ProjectItem
           key={project.id}
+          slug={project.slug}
           title={project.title}
           lead={project.lead}
           body={project.body}
+          image={project.image}
+          imageMobile={project.imageMobile}
         />
       ))}
     </section>

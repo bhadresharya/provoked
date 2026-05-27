@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjectItem({
+  slug,
   title,
   lead,
   body,
@@ -12,27 +14,58 @@ export default function ProjectItem({
       <div className="col-md-11 col-lg-10 mx-auto">
         <div className="mb-5" data-aos="fade-up">
           <figure>
-            <Image
-              src={image}
-              className="d-none d-sm-block img-fluid"
-              alt={title}
-              width={1200}
-              height={600}
-              style={{ width: '100%', height: 'auto' }}
-            />
-            <Image
-              src={imageMobile}
-              className="d-block d-sm-none img-fluid"
-              alt={title}
-              width={600}
-              height={800}
-              style={{ width: '100%', height: 'auto' }}
-            />
+            {slug ? (
+              <Link href={`/works/${slug}`} aria-label={`View ${title} project details`}>
+                <Image
+                  src={image}
+                  className="d-none d-sm-block img-fluid"
+                  alt={title}
+                  width={1200}
+                  height={600}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+                <Image
+                  src={imageMobile}
+                  className="d-block d-sm-none img-fluid"
+                  alt={title}
+                  width={600}
+                  height={800}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
+            ) : (
+              <>
+                <Image
+                  src={image}
+                  className="d-none d-sm-block img-fluid"
+                  alt={title}
+                  width={1200}
+                  height={600}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+                <Image
+                  src={imageMobile}
+                  className="d-block d-sm-none img-fluid"
+                  alt={title}
+                  width={600}
+                  height={800}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </>
+            )}
           </figure>
         </div>
         <div className="row justify-content-between px-lg-5" data-aos="fade-up">
           <div className="col-md-4">
-            <h4 className="mt-2 mb-3 mb-md-0 text-md-end">{title}</h4>
+            {slug ? (
+              <h4 className="mt-2 mb-3 mb-md-0 text-md-end">
+                <Link href={`/works/${slug}`} className="project-title-link">
+                  {title}
+                </Link>
+              </h4>
+            ) : (
+              <h4 className="mt-2 mb-3 mb-md-0 text-md-end">{title}</h4>
+            )}
           </div>
           <div className="col-md-7">
             <p className="lead mb-3">{lead}</p>

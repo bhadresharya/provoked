@@ -78,6 +78,21 @@ a.link {
     }
 }
 
+a.project-title-link {
+    color: $dark;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+    font-weight: 500;
+    transition: color .2s ease-in-out, text-decoration-thickness .2s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+        color: $primary;
+        text-decoration-thickness: 2px;
+    }
+}
+
 figure {
     overflow: hidden;
     -webkit-transform: scale(1);
@@ -333,13 +348,16 @@ body {
                 }
             }
         }
+    }
 
-        footer.footer {
-            padding-bottom: 1rem;
+    footer.footer {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: $gray-200;
+        margin-bottom: 1rem;
 
-            .logo {
-                width: 150px;
-            }
+        .footer-logo {
+            width: 120px;
         }
     }
 
