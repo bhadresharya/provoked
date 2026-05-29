@@ -4,7 +4,7 @@ export default function ProjectResults({ results }) {
   return (
     <section className="case-study-section" data-aos="fade-up">
       <div className="row">
-        <div className="col-md-10 col-lg-8 mx-auto">
+        <div className="col-md-11 col-lg-10 mx-auto">
           <h2 className="heading">Results</h2>
           <ul className="case-study-list mb-0">
             {results.map((result) => (

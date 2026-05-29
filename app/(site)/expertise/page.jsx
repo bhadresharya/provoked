@@ -1,6 +1,7 @@
 import PageHero from '@/components/PageHero';
 import ExpertiseIntro from '@/components/expertise/ExpertiseIntro';
 import ExpertiseServiceBlocks from '@/components/expertise/ExpertiseServiceBlocks';
+import ConferenceSpotlight from '@/components/expertise/ConferenceSpotlight';
 import ExpertiseProcess from '@/components/expertise/ExpertiseProcess';
 import ExpertiseClients from '@/components/expertise/ExpertiseClients';
 import ExpertiseEngagement from '@/components/expertise/ExpertiseEngagement';
@@ -22,6 +23,7 @@ export default function ExpertisePage() {
         />
         <ExpertiseIntro />
         <ExpertiseServiceBlocks />
+        <ConferenceSpotlight />
         <ExpertiseProcess />
         <ExpertiseClients />
         <ExpertiseEngagement />

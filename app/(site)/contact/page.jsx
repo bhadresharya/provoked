@@ -3,6 +3,7 @@ import ContactDetails from '@/components/contact/ContactDetails';
 import ContactProcess from '@/components/contact/ContactProcess';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactFAQ from '@/components/contact/ContactFAQ';
+import PageCta from '@/components/PageCta';
 
 export const metadata = {
   title: 'Contact — Provoked Pixels',
@@ -22,6 +23,11 @@ export default function ContactPage() {
         <ContactProcess />
         <ContactForm />
         <ContactFAQ />
+        <PageCta
+          title="Still have questions?"
+          description="We're happy to walk through your project on a quick call or email."
+          primaryLabel="Contact us"
+        />
       </div>
     </main>
   );

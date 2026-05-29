@@ -1,6 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import ContactDirectCta from '@/components/contact/ContactDirectCta';
+import {
+  CONTACT_FORM_ACTION,
+  CONTACT_FORM_ENABLED,
+} from '@/content/contactForm';
 
 const PROJECT_TYPES = [
   'Web Design',
@@ -11,8 +16,15 @@ const PROJECT_TYPES = [
 ];
 
 export default function ContactForm() {
+  const [submitNotice, setSubmitNotice] = useState('');
+
   const handleSubmit = (e) => {
+    if (CONTACT_FORM_ENABLED) return;
+
     e.preventDefault();
+    setSubmitNotice(
+      'Online submissions are not configured yet. Please email hi@provoked.in or call +91 92281 91969.',
+    );
   };
 
   return (
@@ -33,8 +45,8 @@ export default function ContactForm() {
                 </div>
                 <form
                   className="contact-form"
-                  action="#"
-                  method="post"
+                  action={CONTACT_FORM_ENABLED ? CONTACT_FORM_ACTION : undefined}
+                  method="POST"
                   onSubmit={handleSubmit}
                   noValidate
                 >
@@ -133,6 +145,11 @@ export default function ContactForm() {
                     </div>
                     <div className="col-12">
                       <div className="contact-form__actions">
+                        {submitNotice && (
+                          <p className="contact-form__notice text-muted mb-0" role="status">
+                            {submitNotice}
+                          </p>
+                        )}
                         <button type="submit" className="btn btn-primary contact-submit rounded-pill">
                           Send message
                           <i className="fa-solid fa-paper-plane ms-2" aria-hidden="true" />

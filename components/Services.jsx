@@ -1,8 +1,10 @@
+import Link from 'next/link';
+
 export default function Services() {
   return (
     <section className="services" id="services">
       <div className="row">
-        <div className="col-md-10 col-lg-8 mx-auto">
+        <div className="col-md-11 col-lg-10 mx-auto">
           <p className="badge text-primary bg-primary-subtle rounded-pill fs-6 mb-3" data-aos="fade-up">
             Our Services
           </p>
@@ -14,10 +16,13 @@ export default function Services() {
             brands to stand out in a competitive digital landscape. Our data-backed strategies and
             visually compelling designs ensure your business makes a lasting impact.
           </p>
+          <Link href="/expertise" className="link" data-aos="fade-up">
+            Explore all expertise
+          </Link>
         </div>
       </div>
       <div className="row">
-        <div className="col-md-10 col-lg-8 mx-auto">
+        <div className="col-md-11 col-lg-10 mx-auto">
           <ul className="service-list">
             <li className="row" data-aos="fade-up">
               <div className="col-md-3">

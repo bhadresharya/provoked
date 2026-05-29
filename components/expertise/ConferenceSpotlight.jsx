@@ -4,7 +4,7 @@ export default function ConferenceSpotlight() {
   return (
     <section className="conference-spotlight" id="conferenceBranding" data-aos="fade-up">
       <div className="row">
-        <div className="col-md-10 col-lg-8 mx-auto">
+        <div className="col-md-11 col-lg-10 mx-auto">
           <div className="conference-spotlight__inner">
             <div className="conference-spotlight__accent" aria-hidden="true" />
             <p className="badge text-primary bg-primary-subtle rounded-pill fs-6 mb-3">

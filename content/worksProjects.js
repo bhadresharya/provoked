@@ -1,50 +1,50 @@
-const ABHYUDAYA_BASE = {
-  title: 'Abhyudaya Ornaments',
+const BRAND_IDENTITY_PROJECT = {
+  title: 'Abhyudaya Ornaments — Brand Identity',
   client: 'Abhyudaya Ornaments',
   industry: 'Jewelry & Retail',
   year: '2024',
-  services: ['Branding', 'Social Media Design'],
+  services: ['Brand Identity', 'Logo Design', 'Visual Guidelines'],
   liveUrl: null,
-  hook:
-    'Repositioned a jewelry brand with a premium identity and social-first creative system.',
+  hook: 'Built a premium jewelry brand identity rooted in craftsmanship, trust, and timeless elegance.',
   lead:
     'A distinguished jewelry manufacturer and retailer, Abhyudaya Ornaments needed a brand presence as exquisite as their craftsmanship.',
+  body: 'We developed a full brand identity—logo system, typography, color palette, and guidelines—that positions Abhyudaya as a premium name in a competitive jewelry market.',
   overview:
-    'Abhyudaya Ornaments is a distinguished jewelry manufacturer and retailer known for craftsmanship and heritage. We partnered with them to build a cohesive brand identity and social presence that reflects elegance, trust, and timeless appeal.',
+    'Abhyudaya Ornaments is known for fine craftsmanship and heritage. We partnered with them to define a visual identity that feels luxurious yet approachable, and scales across retail, packaging, and digital touchpoints.',
   challenge:
-    'They had a strong offline reputation, but their digital brand felt inconsistent and did not reflect the premium quality of their products. Social channels lacked a unified visual language, making it difficult to stand out in a competitive jewelry market.',
+    'Their existing identity felt dated and inconsistent across print and digital. They needed a cohesive system that jewelers, retailers, and customers would instantly associate with quality.',
   approach: [
     {
       title: 'Discover',
       description:
-        'We studied their heritage, audience, and competitors to define a visual direction rooted in elegance and trust.',
+        'We audited their heritage, product range, and competitor landscape to define a positioning rooted in trust and artistry.',
     },
     {
       title: 'Design',
       description:
-        'We crafted a logo system, typography, and brand assets that communicate sophistication across touchpoints.',
+        'We crafted a logo system, typography pairing, and color palette suited to premium jewelry applications.',
     },
     {
       title: 'Build',
       description:
-        'We developed social templates and campaign creatives aligned with the new identity.',
+        'We delivered brand guidelines and asset libraries for internal teams and print partners.',
     },
     {
       title: 'Grow',
       description:
-        'We refined rollout across channels to strengthen recognition and engagement.',
+        'We supported rollout across stationery, signage, and initial digital templates.',
     },
   ],
   results: [
-    'Cohesive premium brand identity across digital channels',
-    'Stronger social presence with consistent, high-quality creatives',
-    'Clearer positioning that reflects craftsmanship and heritage',
+    'Unified brand identity across retail and digital touchpoints',
+    'Clear visual hierarchy for product and collection marketing',
+    'Guidelines that internal teams can apply consistently',
   ],
   deliverables: [
-    'Logo & brand identity system',
-    'Social media design templates',
-    'Campaign creatives',
-    'Brand visual guidelines',
+    'Primary and secondary logo lockups',
+    'Color and typography system',
+    'Brand guidelines document',
+    'Stationery and signage templates',
   ],
   testimonial: {
     quote:
@@ -55,18 +55,147 @@ const ABHYUDAYA_BASE = {
   image: '/images/abhyudaya-ornaments.png',
   imageMobile: '/images/abhyudaya-ornaments-vertical.png',
   gallery: [
-    {
-      src: '/images/abhyudaya-ornaments.png',
-      alt: 'Abhyudaya Ornaments brand showcase',
-    },
+    { src: '/images/abhyudaya-ornaments.png', alt: 'Abhyudaya Ornaments brand identity showcase' },
     {
       src: '/images/abhyudaya-ornaments-vertical.png',
-      alt: 'Abhyudaya Ornaments social creatives',
+      alt: 'Abhyudaya Ornaments logo applications',
+    },
+    { src: '/images/abhyudaya-ornaments.png', alt: 'Abhyudaya Ornaments brand collateral' },
+  ],
+};
+
+const SOCIAL_CAMPAIGN_PROJECT = {
+  title: 'Abhyudaya Ornaments — Social Campaign',
+  client: 'Abhyudaya Ornaments',
+  industry: 'Jewelry & Retail',
+  year: '2024',
+  services: ['Social Media Design', 'Campaign Creative', 'Content Templates'],
+  liveUrl: null,
+  hook: 'Launched a social-first creative system with templates and campaigns that showcase craftsmanship online.',
+  lead:
+    'With a refreshed identity in place, Abhyudaya needed a consistent social presence that could keep pace with festivals, launches, and daily engagement.',
+  body: 'We extended their brand into a modular social design system—templates, campaign sets, and story frames—built for fast turnaround without sacrificing polish.',
+  overview:
+    'Social channels were a key growth lever for Abhyudaya. We designed a flexible template library and seasonal campaign creatives that highlight products, craftsmanship, and heritage.',
+  challenge:
+    'Posting was inconsistent and time-consuming. The team lacked reusable templates aligned to the new brand, leading to off-brand creatives and missed festival moments.',
+  approach: [
+    {
+      title: 'Discover',
+      description:
+        'We mapped content pillars, posting cadence, and key retail moments across the calendar.',
     },
     {
-      src: '/images/abhyudaya-ornaments.png',
-      alt: 'Abhyudaya Ornaments identity application',
+      title: 'Design',
+      description:
+        'We built post, story, and carousel templates with editable zones for products and offers.',
     },
+    {
+      title: 'Build',
+      description:
+        'We produced launch and festival campaign sets ready for scheduling and paid promotion.',
+    },
+    {
+      title: 'Grow',
+      description:
+        'We refined top-performing formats based on engagement patterns and seasonal performance.',
+    },
+  ],
+  results: [
+    'Faster content production with on-brand templates',
+    'Stronger visual consistency across Instagram and Facebook',
+    'Campaign-ready creatives for festivals and product launches',
+  ],
+  deliverables: [
+    'Social post and story templates',
+    'Festival and campaign creative sets',
+    'Reel cover and carousel frames',
+    'Editable source files for the marketing team',
+  ],
+  testimonial: {
+    quote:
+      'Our social feeds finally look as premium as our products. The templates save us hours every week.',
+    author: 'Marketing Team',
+    role: 'Abhyudaya Ornaments',
+  },
+  image: '/images/abhyudaya-ornaments-vertical.png',
+  imageMobile: '/images/abhyudaya-ornaments-vertical.png',
+  gallery: [
+    {
+      src: '/images/abhyudaya-ornaments-vertical.png',
+      alt: 'Abhyudaya Ornaments social media templates',
+    },
+    { src: '/images/abhyudaya-ornaments.png', alt: 'Abhyudaya Ornaments campaign creative' },
+    {
+      src: '/images/abhyudaya-ornaments-vertical.png',
+      alt: 'Abhyudaya Ornaments festival campaign assets',
+    },
+  ],
+};
+
+const BRAND_REFRESH_PROJECT = {
+  title: 'Abhyudaya Ornaments — Digital Refresh',
+  client: 'Abhyudaya Ornaments',
+  industry: 'Jewelry & Retail',
+  year: '2024',
+  services: ['Website Redesign', 'UI/UX Design', 'Brand Rollout'],
+  liveUrl: null,
+  hook: 'Modernized Abhyudaya\'s digital presence with a redesigned site experience aligned to their premium repositioning.',
+  lead:
+    'As the brand evolved, their website needed to match—clearer navigation, stronger product storytelling, and a mobile experience worthy of their craftsmanship.',
+  body: 'We redesigned key site templates and UX flows to improve credibility, showcase collections, and guide visitors toward retail and inquiry actions.',
+  overview:
+    'The website was the hub for brand discovery and retailer inquiries. We restructured information architecture, refreshed UI design, and aligned every page to the updated identity.',
+  challenge:
+    'The legacy site felt cluttered on mobile, buried key collections, and did not reflect the premium positioning established through the brand refresh.',
+  approach: [
+    {
+      title: 'Discover',
+      description:
+        'We reviewed analytics, user paths, and stakeholder goals to prioritize high-impact pages.',
+    },
+    {
+      title: 'Design',
+      description:
+        'We wireframed and designed responsive templates for home, collections, and contact flows.',
+    },
+    {
+      title: 'Build',
+      description:
+        'We prepared developer-ready specs and component guidance for implementation.',
+    },
+    {
+      title: 'Grow',
+      description:
+        'We planned phased rollout and optimization for search and conversion performance.',
+    },
+  ],
+  results: [
+    'Clearer site structure for collections and brand story',
+    'Mobile-first layouts that reflect premium positioning',
+    'Improved paths to contact and retailer inquiries',
+  ],
+  deliverables: [
+    'UX audit and updated information architecture',
+    'Responsive UI designs for key templates',
+    'Component and handoff documentation',
+    'Launch and optimization recommendations',
+  ],
+  testimonial: {
+    quote:
+      'The new site direction finally matches the quality of our work. Customers understand our brand the moment they land.',
+    author: 'Leadership Team',
+    role: 'Abhyudaya Ornaments',
+  },
+  image: '/images/abhyudaya-ornaments.png',
+  imageMobile: '/images/abhyudaya-ornaments-vertical.png',
+  gallery: [
+    { src: '/images/abhyudaya-ornaments.png', alt: 'Abhyudaya Ornaments website redesign' },
+    {
+      src: '/images/abhyudaya-ornaments-vertical.png',
+      alt: 'Abhyudaya Ornaments mobile layout designs',
+    },
+    { src: '/images/abhyudaya-ornaments.png', alt: 'Abhyudaya Ornaments collection page UI' },
   ],
 };
 
@@ -74,22 +203,17 @@ export const WORKS_PROJECTS = [
   {
     id: 'abhyudaya-ornaments-1',
     slug: 'abhyudaya-ornaments-1',
-    ...ABHYUDAYA_BASE,
-    body: 'Our design team created a sophisticated brand identity and social creative system that reflects elegance and trust, helping the brand resonate with its audience online.',
+    ...BRAND_IDENTITY_PROJECT,
   },
   {
     id: 'abhyudaya-ornaments-2',
     slug: 'abhyudaya-ornaments-2',
-    ...ABHYUDAYA_BASE,
-    title: 'Abhyudaya Ornaments — Social Campaign',
-    body: 'We extended the brand identity into a consistent social media presence with templates and campaign creatives designed to highlight artistry and heritage.',
+    ...SOCIAL_CAMPAIGN_PROJECT,
   },
   {
     id: 'abhyudaya-ornaments-3',
     slug: 'abhyudaya-ornaments-3',
-    ...ABHYUDAYA_BASE,
-    title: 'Abhyudaya Ornaments — Brand Refresh',
-    body: 'A full brand refresh including logo refinement, visual guidelines, and digital assets that elevated their positioning in the jewelry market.',
+    ...BRAND_REFRESH_PROJECT,
   },
 ];
 

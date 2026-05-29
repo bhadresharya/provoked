@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const TILE_LINES = [
   [
@@ -42,6 +43,12 @@ const TRANSITION_MS = 500;
 
 export default function FullPageMenu({ isOpen, isClosing, onNavigate }) {
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href) => {
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -79,8 +86,9 @@ export default function FullPageMenu({ isOpen, isClosing, onNavigate }) {
           <Link
             key={item.label}
             href={item.href}
-            className="menu__item"
+            className={`menu__item${isActive(item.href) ? ' menu__item--active' : ''}`}
             onClick={onNavigate}
+            aria-current={isActive(item.href) ? 'page' : undefined}
           >
             <span className="menu__item-text">{item.label}</span>
           </Link>

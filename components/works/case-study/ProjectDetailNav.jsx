@@ -37,16 +37,6 @@ export default function ProjectDetailNav({ prev, next }) {
               )}
             </div>
           </div>
-
-          <div className="cta text-center">
-            <p className="h4 mb-2">Ready to start your project?</p>
-            <p className="mb-4">Let&apos;s bring your brand vision to life.</p>
-            <div>
-              <Link href="/contact" className="btn btn-outline-light rounded-pill px-4">
-                Get in touch
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ import ProjectResults from '@/components/works/case-study/ProjectResults';
 import ProjectDeliverables from '@/components/works/case-study/ProjectDeliverables';
 import ProjectTestimonial from '@/components/works/case-study/ProjectTestimonial';
 import ProjectDetailNav from '@/components/works/case-study/ProjectDetailNav';
+import PageCta from '@/components/PageCta';
 
 export default function ProjectDetail({ project, prev, next }) {
   return (
@@ -28,6 +29,11 @@ export default function ProjectDetail({ project, prev, next }) {
       <ProjectDeliverables deliverables={project.deliverables} />
       <ProjectTestimonial testimonial={project.testimonial} />
       <ProjectDetailNav prev={prev} next={next} />
+      <PageCta
+        title="Ready to start your project?"
+        description="Let's bring your brand vision to life."
+        showPhone={false}
+      />
     </>
   );
 }

@@ -2,7 +2,7 @@ export default function ProjectApproach({ steps }) {
   return (
     <section className="case-study-section" data-aos="fade-up">
       <div className="row">
-        <div className="col-md-10 col-lg-8 mx-auto">
+        <div className="col-md-11 col-lg-10 mx-auto">
           <h2 className="heading">Our Approach</h2>
           <div className="row g-4">
             {steps.map((step, index) => (

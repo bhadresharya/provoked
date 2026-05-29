@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="row">
-        <div className="col-md-10 col-lg-8 mx-auto">
+        <div className="col-md-11 col-lg-10 mx-auto">
           <p className="badge text-primary bg-primary-subtle rounded-pill fs-6 mb-3" data-aos="fade-up">
             Our Projects
           </p>
@@ -23,27 +23,33 @@ export default function Projects() {
         <div className="col-md-11 col-lg-10 mx-auto">
           <div className="mb-5" data-aos="fade-up">
             <figure>
-              <Image 
-                src="/images/abhyudaya-ornaments.png" 
-                className="d-none d-sm-block img-fluid" 
-                alt="Abhyudaya Ornaments"
-                width={1200}
-                height={600}
-                style={{ width: '100%', height: 'auto' }}
-              />
-              <Image 
-                src="/images/abhyudaya-ornaments-vertical.png" 
-                className="d-block d-sm-none img-fluid"
-                alt="Abhyudaya Ornaments"
-                width={600}
-                height={800}
-                style={{ width: '100%', height: 'auto' }}
-              />
+              <Link href="/works/abhyudaya-ornaments-1" aria-label="View Abhyudaya Ornaments case study">
+                <Image 
+                  src="/images/abhyudaya-ornaments.png" 
+                  className="d-none d-sm-block img-fluid" 
+                  alt="Abhyudaya Ornaments"
+                  width={1200}
+                  height={600}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+                <Image 
+                  src="/images/abhyudaya-ornaments-vertical.png" 
+                  className="d-block d-sm-none img-fluid"
+                  alt="Abhyudaya Ornaments"
+                  width={600}
+                  height={800}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
             </figure>
           </div>
           <div className="row justify-content-between px-lg-5" data-aos="fade-up">
             <div className="col-md-4">
-              <h5 className="mt-2 mb-3 mb-md-0 text-md-end">Abhyudaya Ornaments</h5>
+              <h5 className="mt-2 mb-3 mb-md-0 text-md-end">
+                <Link href="/works/abhyudaya-ornaments-1" className="project-title-link">
+                  Abhyudaya Ornaments
+                </Link>
+              </h5>
             </div>
             <div className="col-md-7">
               <p className="lead mb-3">A distinguished jewelry manufacturer and retailer, Abhyudaya

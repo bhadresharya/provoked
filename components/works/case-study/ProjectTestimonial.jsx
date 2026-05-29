@@ -4,7 +4,7 @@ export default function ProjectTestimonial({ testimonial }) {
   return (
     <section className="case-study-testimonial" data-aos="fade-up">
       <div className="row">
-        <div className="col-md-10 col-lg-8 mx-auto">
+        <div className="col-md-11 col-lg-10 mx-auto">
           <blockquote className="mb-0">
             <p className="h4 mb-3">&ldquo;{testimonial.quote}&rdquo;</p>
             <footer className="text-muted">
