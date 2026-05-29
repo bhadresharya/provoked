@@ -127,6 +127,375 @@ a.project-title-link {
     }
 }
 
+.contact-section {
+    padding-bottom: 3rem;
+
+    &:last-child {
+        padding-bottom: 1rem;
+    }
+}
+
+.contact-section-inner {
+    max-width: 100%;
+}
+
+.contact-card {
+    border-radius: 0;
+}
+
+.contact-form-card {
+    background: $white;
+    border: 1px solid $gray-300;
+    box-shadow: 0 12px 40px rgba($black, 0.06);
+    border-radius: 0;
+
+    &__header {
+        padding: 1.75rem 1.75rem 0;
+        border-bottom: 1px solid $gray-300;
+
+        @include media-breakpoint-down(md) {
+            padding: 1.25rem 1.25rem 0;
+        }
+    }
+
+    &__intro {
+        color: $gray-600;
+        max-width: 36rem;
+    }
+}
+
+.contact-form {
+    padding: 1.75rem;
+
+    @include media-breakpoint-down(md) {
+        padding: 1.25rem;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding-top: 0.5rem;
+    }
+
+    &__note {
+        font-size: 0.875rem;
+        color: $gray-600;
+    }
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $gray-800;
+    margin-bottom: 0;
+}
+
+.contact-required {
+    color: $primary;
+}
+
+.contact-optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: $gray-600;
+    margin-left: 0.25rem;
+}
+
+.contact-input {
+    width: 100%;
+    display: block;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $dark;
+    background-color: $gray-100;
+    border: 1px solid $gray-300;
+    border-radius: 0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+    &::placeholder {
+        color: $gray-500;
+    }
+
+    &:hover {
+        border-color: $gray-500;
+        background-color: $white;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $primary;
+        background-color: $white;
+        box-shadow: 0 0 0 3px rgba($primary, 0.12);
+    }
+
+    &:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+}
+
+.contact-textarea {
+    min-height: 9rem;
+    resize: vertical;
+}
+
+.contact-select-wrap {
+    position: relative;
+}
+
+.contact-select {
+    appearance: none;
+    padding-right: 2.75rem;
+    cursor: pointer;
+}
+
+.contact-select-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: $gray-600;
+    pointer-events: none;
+    font-size: 0.75rem;
+}
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba($primary, 0.25);
+    }
+
+    &:focus-visible {
+        box-shadow: 0 0 0 3px rgba($primary, 0.25);
+    }
+}
+
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+}
+
+.contact-direct-cta {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, $gray-900 0%, $dark 55%, lighten($dark, 4%) 100%);
+    color: $white;
+    padding: 1.75rem;
+    margin-bottom: 0;
+
+    &__accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, $logo-color-1 0%, $logo-color-4 100%);
+    }
+
+    &__icon-wrap {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba($white, 0.1);
+        border: 1px solid rgba($white, 0.15);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        color: $logo-color-4;
+    }
+
+    &__badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $logo-color-4;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+    }
+
+    &__text {
+        color: rgba($white, 0.78);
+        margin-bottom: 1.25rem;
+        line-height: 1.6;
+    }
+
+    &__channels {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    &__channel {
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        padding: 0.875rem 1rem;
+        background: rgba($white, 0.06);
+        border: 1px solid rgba($white, 0.12);
+        color: $white;
+        text-decoration: none;
+        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            background: rgba($white, 0.12);
+            border-color: rgba($white, 0.22);
+            color: $white;
+            transform: translateX(4px);
+        }
+    }
+
+    &__channel-icon {
+        flex-shrink: 0;
+        width: 2.25rem;
+        height: 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba($primary, 0.2);
+        color: $white;
+        font-size: 0.9rem;
+    }
+
+    &__channel-body {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    &__channel-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgba($white, 0.65);
+    }
+
+    &__channel-value {
+        font-size: 0.95rem;
+        font-weight: 600;
+        word-break: break-word;
+    }
+
+    &__channel-action {
+        flex-shrink: 0;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: $logo-color-4;
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+
+    &__meta {
+        font-size: 0.875rem;
+        color: rgba($white, 0.6);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.25rem;
+        line-height: 1.5;
+    }
+}
+
+.contact-list {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+
+    li {
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.contact-faq-accordion {
+    border-top: 1px solid $gray-400;
+}
+
+.contact-faq-item {
+    border-bottom: 1px solid $gray-400;
+}
+
+.contact-faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    font-weight: 500;
+    color: $dark;
+
+    &:hover,
+    &:focus-visible {
+        color: $primary;
+    }
+}
+
+.contact-faq-icon {
+    flex-shrink: 0;
+    transition: transform 0.2s ease-in-out;
+
+    &.is-open {
+        transform: rotate(180deg);
+    }
+}
+
+.contact-faq-panel {
+    display: none;
+    padding-bottom: 1.25rem;
+
+    &.is-open {
+        display: block;
+    }
+}
+
 .case-study-nav {
     &__controls {
         display: grid;
@@ -381,6 +750,7 @@ body {
 
     main {
         width: 100%;
+        overflow-x: hidden;
         background-color: $gray-200;
         padding: 1rem;
         padding-top: 10rem;
@@ -402,7 +772,11 @@ body {
 
             }
 
-            h1.heading::before {
+            &.hero h1.heading {
+                position: relative;
+            }
+
+            &.hero h1.heading::before {
                 content: "";
                 position: absolute;
                 top: .75rem;
@@ -410,6 +784,20 @@ body {
                 height: 4.5rem;
                 width: .5rem;
                 background-color: $primary;
+
+                @include media-breakpoint-down(md) {
+                    left: -1.5rem;
+                    height: 3.5rem;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+
+            h2.heading,
+            h3.heading {
+                position: relative;
             }
 
             .sub-heading {

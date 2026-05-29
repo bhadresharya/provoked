@@ -12,7 +12,6 @@ export default function ExpertisePage() {
         <PageHero
           title="Innovating India's Digital Ecosystem with Smart Design & Marketing"
           description="Through expert web design, graphic design, and AI-driven digital marketing, we empower brands to stand out in a competitive digital landscape."
-          imageSrc="/images/header-hero.jpg"
         />
       </div>
     </main>
