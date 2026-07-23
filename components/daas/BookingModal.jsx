@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 
-export default function CalendlyModal({ isOpen, onClose, url }) {
+export default function BookingModal({ isOpen, onClose, url }) {
   return (
     <AnimatePresence>
       {isOpen && url ? (
@@ -11,7 +11,7 @@ export default function CalendlyModal({ isOpen, onClose, url }) {
           className="daas-modal"
           role="dialog"
           aria-modal="true"
-          aria-labelledby="daas-calendly-title"
+          aria-labelledby="daas-booking-title"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export default function CalendlyModal({ isOpen, onClose, url }) {
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="daas-modal__header">
-              <h2 id="daas-calendly-title" className="daas-modal__title">
+              <h2 id="daas-booking-title" className="daas-modal__title">
                 Book a 15-min intro call
               </h2>
               <button
@@ -45,10 +45,11 @@ export default function CalendlyModal({ isOpen, onClose, url }) {
             </div>
             <div className="daas-modal__body">
               <iframe
-                title="Calendly scheduling"
+                title="Cal.com scheduling"
                 src={url}
                 className="daas-modal__iframe"
                 loading="lazy"
+                allow="camera; microphone; fullscreen"
               />
             </div>
           </motion.div>

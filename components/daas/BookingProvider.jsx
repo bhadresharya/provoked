@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import CalendlyModal from '@/components/daas/CalendlyModal';
+import BookingModal from '@/components/daas/BookingModal';
 
 const BookingContext = createContext({
   openBooking: () => {},
@@ -13,17 +13,25 @@ export function useBooking() {
   return useContext(BookingContext);
 }
 
+function getBookingUrl() {
+  return (
+    process.env.NEXT_PUBLIC_CALCOM_URL ||
+    process.env.NEXT_PUBLIC_CALENDLY_URL ||
+    ''
+  );
+}
+
 export default function BookingProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || '';
+  const bookingUrl = getBookingUrl();
 
   const openBooking = useCallback(() => {
-    if (!calendlyUrl) {
+    if (!bookingUrl) {
       window.location.href = 'mailto:hello@provoked.in?subject=Intro%20call%20request';
       return;
     }
     setIsOpen(true);
-  }, [calendlyUrl]);
+  }, [bookingUrl]);
 
   const closeBooking = useCallback(() => setIsOpen(false), []);
 
@@ -48,7 +56,7 @@ export default function BookingProvider({ children }) {
   return (
     <BookingContext.Provider value={value}>
       {children}
-      <CalendlyModal isOpen={isOpen} onClose={closeBooking} url={calendlyUrl} />
+      <BookingModal isOpen={isOpen} onClose={closeBooking} url={bookingUrl} />
     </BookingContext.Provider>
   );
 }
