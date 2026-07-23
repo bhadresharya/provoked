@@ -1,5 +1,6 @@
 import { Manrope } from 'next/font/google';
 import Scripts from '@/components/Scripts';
+import BookingProvider from '@/components/daas/BookingProvider';
 import '@/styles/globals.scss';
 
 const manrope = Manrope({
@@ -8,25 +9,17 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: 'Provoked Pixels',
-  description: 'We create digital experiences that matter',
+  title: 'Provoked Pixels — Design subscription for startups',
+  description:
+    'Flat ₹29,990/month design subscription for founders and growing businesses. Pitch decks, product UI, campaigns, and event visuals in 24–48 hours. Pause anytime.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
-      </head>
       <body className={manrope.className}>
         <Scripts />
-        {children}
+        <BookingProvider>{children}</BookingProvider>
         <div className="bd-brd"></div>
       </body>
     </html>

@@ -33,19 +33,21 @@ const TILE_LINES = [
 ];
 
 const MENU_ITEMS = [
-  { label: 'home', href: '/' },
-  { label: 'expertise', href: '/expertise' },
-  { label: 'works', href: '/works' },
-  { label: 'contact', href: '/contact' },
+  { label: 'how it works', href: '/#how-it-works' },
+  { label: 'benefits', href: '/#benefits' },
+  { label: 'work', href: '/#work' },
+  { label: 'pricing', href: '/#pricing' },
+  { label: 'faq', href: '/#faq' },
 ];
 
 const TRANSITION_MS = 500;
 
-export default function FullPageMenu({ isOpen, isClosing, onNavigate }) {
+export default function FullPageMenu({ isOpen, isClosing, onNavigate, onBookCall }) {
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
   const isActive = (href) => {
+    if (href.startsWith('/#')) return pathname === '/';
     if (href === '/') return pathname === '/';
     return pathname === href || pathname.startsWith(`${href}/`);
   };
@@ -93,6 +95,14 @@ export default function FullPageMenu({ isOpen, isClosing, onNavigate }) {
             <span className="menu__item-text">{item.label}</span>
           </Link>
         ))}
+        <div className="menu-wrap__ctas">
+          <button type="button" className="btn btn-outline-light" onClick={onBookCall}>
+            Book a call
+          </button>
+          <Link href="/#pricing" className="btn btn-primary" onClick={onNavigate}>
+            See pricing
+          </Link>
+        </div>
       </nav>
     </div>,
     document.body

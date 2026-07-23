@@ -2,47 +2,46 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const FOOTER_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'Expertise', href: '/expertise' },
-  { label: 'Work', href: '/works' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Benefits', href: '/#benefits' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'FAQ', href: '/#faq' },
+];
+
+const SOCIAL_LINKS = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/provoked-pixels',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/provokedpixels',
+  },
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="footer" data-aos="fade">
+    <footer className="footer daas-footer">
       <div className="container">
         <div className="row">
-          <div className="col-md-11 col-lg-10 mx-auto">
-            <div className="text-center">
-              <Image
-                src="/images/logo.svg"
-                className="footer-logo mb-3"
-                alt="Provoked Pixels Logo"
-                width={120}
-                height={23}
-              />
-              <nav className="footer-nav mb-3" aria-label="Footer navigation">
-                <ul className="footer-nav__list">
-                  {FOOTER_LINKS.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href}>{item.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-              <p className="footer-contact text-muted small mb-2">
-                <a href="tel:+919228191969" className="text-muted text-decoration-none">
-                  +91 92281 91969
-                </a>
-                <span className="mx-2" aria-hidden="true">
-                  ·
-                </span>
-                <a href="mailto:hi@provoked.in" className="text-muted text-decoration-none">
-                  hi@provoked.in
-                </a>
-              </p>
-              <p className="text-muted small mb-0">© 2025 Provoked Pixels</p>
+          <div className="col-lg-10 mx-auto">
+            <div className="daas-footer__inner">
+              <div className="daas-footer__brand">
+                <Image
+                  src="/images/logo.svg"
+                  className="footer-logo"
+                  alt="Provoked Pixels Logo"
+                  width={140}
+                  height={27}
+                />
+              </div>
+
+              <div className="daas-footer__bottom">
+                <p className="mb-0">© {year} Provoked Pixels</p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,0 @@
-export const CONTACT_FORM_ACTION =
-  process.env.NEXT_PUBLIC_CONTACT_FORM_ACTION ?? '';
-
-export const CONTACT_FORM_ENABLED = Boolean(CONTACT_FORM_ACTION);
