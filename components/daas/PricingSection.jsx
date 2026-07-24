@@ -1,7 +1,6 @@
 'use client';
 
 import { Check } from 'lucide-react';
-import CheckoutButton from '@/components/daas/CheckoutButton';
 import { useBooking } from '@/components/daas/BookingProvider';
 import { DAAS_PRICING } from '@/content/daasPricing';
 
@@ -49,13 +48,12 @@ export default function PricingSection() {
                   <span className="daas-pricing__suffix">{plan.price.suffix}</span>
                 </div>
                 <div className="daas-pricing__actions">
-                  <CheckoutButton label={plan.ctaLabel} envKey={plan.checkoutEnvKey} featured />
                   <button
                     type="button"
-                    className="btn btn-link daas-pricing__call"
+                    className="btn btn-primary daas-btn w-100"
                     onClick={openBooking}
                   >
-                    Book a 15-min intro call
+                    {plan.ctaLabel}
                   </button>
                 </div>
               </div>

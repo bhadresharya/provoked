@@ -13,7 +13,6 @@ export const DAAS_PRICING = {
       display: '₹29,990',
       suffix: '/month',
     },
-    checkoutEnvKey: 'NEXT_PUBLIC_CHECKOUT_URL',
     features: [
       'One active request at a time',
       'Avg. 48-hour delivery',
@@ -24,7 +23,7 @@ export const DAAS_PRICING = {
       'Senior studio craft',
       'Pause or cancel anytime',
     ],
-    ctaLabel: 'Start this month',
+    ctaLabel: 'Book a 15 min intro call',
   },
   comparisons: [
     {
