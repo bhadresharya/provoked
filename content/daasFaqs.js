@@ -12,7 +12,7 @@ export const DAAS_FAQS = {
     {
       question: 'How does onboarding work?',
       answer:
-        'Start with a 15-min intro call. If we’re a fit, we send an invoice — you pay, then we add you to a Notion design board (usually within a day). Accept the invite, drop your first brief, and you’re live. How to request is written on the board itself.',
+        'Start with a 15-min intro call. If we’re a fit, we send a secure Razorpay payment link (UPI, cards, or netbanking). After payment, we add you to a Notion design board — usually within a day. Accept the invite, drop your first brief, and you’re live.',
     },
     {
       question: 'Who actually does the work?',
@@ -52,7 +52,7 @@ export const DAAS_FAQS = {
     {
       question: 'What’s the price?',
       answer:
-        '₹49,990 per month. One number, GST-ready invoicing on request, pause or cancel anytime — no long-term contract.',
+        '₹49,990 per month. One clear number, pause or cancel anytime — no long-term contract.',
     },
   ],
 };

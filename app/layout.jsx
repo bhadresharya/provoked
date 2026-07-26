@@ -9,9 +9,9 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: 'Provoked Pixels — Design subscription for startups',
+  title: 'Provoked Pixels — Provoked Monthly Club',
   description:
-    'Flat ₹49,990/month design subscription for founders and growing businesses. Pitch decks, product UI, campaigns, and event visuals in 24–48 hours. Pause anytime.',
+    'Provoked Monthly Club: flat ₹49,990/month design subscription for founders and growing businesses. Pitch decks, product UI, campaigns, and event visuals in 24–48 hours. Pause anytime.',
 };
 
 export default function RootLayout({ children }) {

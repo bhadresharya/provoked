@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import BookingModal from '@/components/daas/BookingModal';
+import { trackEvent } from '@/lib/analytics';
 
 const BookingContext = createContext({
   openBooking: () => {},
@@ -14,23 +15,24 @@ export function useBooking() {
 }
 
 function getBookingUrl() {
-  return (
-    process.env.NEXT_PUBLIC_CALCOM_URL ||
-    process.env.NEXT_PUBLIC_CALENDLY_URL ||
-    ''
-  );
+  return process.env.NEXT_PUBLIC_CALCOM_URL || '';
 }
 
 export default function BookingProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const bookingUrl = getBookingUrl();
 
-  const openBooking = useCallback(() => {
+  const openBooking = useCallback((source = 'unknown') => {
+    trackEvent('book_call_click', { booking_source: source });
+
     if (!bookingUrl) {
+      trackEvent('book_call_mailto', { booking_source: source });
       window.location.href = 'mailto:hello@provoked.in?subject=Intro%20call%20request';
       return;
     }
+
     setIsOpen(true);
+    trackEvent('booking_modal_open', { booking_source: source });
   }, [bookingUrl]);
 
   const closeBooking = useCallback(() => setIsOpen(false), []);

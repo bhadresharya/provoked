@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
 const siteUrl = process.env.SITE_URL ?? 'https://provoked.in';
 
-const urls = ['/'];
+const urls = ['/', '/privacy', '/terms'];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

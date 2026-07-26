@@ -20,7 +20,7 @@ export default function SocialProof() {
               <p className="daas-proof__lead">{description}</p>
             </header>
 
-            <ul className="daas-proof__logos list-unstyled mb-0" aria-label="Client logos (draft slots)">
+            <ul className="daas-proof__logos list-unstyled mb-4" aria-label="Client logos (draft slots)">
               {logos.map((logo) => (
                 <li key={logo.id}>
                   <span className="daas-proof__logo-slot">{logo.label}</span>

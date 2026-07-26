@@ -1,15 +1,44 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { Check } from 'lucide-react';
 import { useBooking } from '@/components/daas/BookingProvider';
+import PaymentTrustNote from '@/components/daas/PaymentTrustNote';
 import { DAAS_PRICING } from '@/content/daasPricing';
+import { trackEvent } from '@/lib/analytics';
 
 export default function PricingSection() {
   const { id, eyebrow, title, description, plan, comparisons, trustNotes } = DAAS_PRICING;
   const { openBooking } = useBooking();
+  const compareItems = comparisons?.items ?? [];
+  const sectionRef = useRef(null);
+  const viewedRef = useRef(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node || typeof IntersectionObserver === 'undefined') return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || viewedRef.current) return;
+        viewedRef.current = true;
+        trackEvent('pricing_view');
+        observer.disconnect();
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id={id} className="daas-section daas-pricing" aria-labelledby="daas-pricing-heading">
+    <section
+      ref={sectionRef}
+      id={id}
+      className="daas-section daas-pricing"
+      aria-labelledby="daas-pricing-heading"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-10 mx-auto">
@@ -20,21 +49,6 @@ export default function PricingSection() {
               </h2>
               <p className="daas-pricing__lead">{description}</p>
             </header>
-
-            {comparisons?.length ? (
-              <div className="daas-pricing__compare" aria-label="Cost comparison">
-                {comparisons.map((item) => (
-                  <article
-                    key={item.label}
-                    className={`daas-pricing__compare-card daas-pricing__compare-card--${item.tone}`}
-                  >
-                    <p className="daas-pricing__compare-label">{item.label}</p>
-                    <p className="daas-pricing__compare-value">{item.value}</p>
-                    <p className="daas-pricing__compare-note mb-0">{item.note}</p>
-                  </article>
-                ))}
-              </div>
-            ) : null}
 
             <article className="daas-pricing__panel">
               <div className="daas-pricing__offer">
@@ -51,10 +65,11 @@ export default function PricingSection() {
                   <button
                     type="button"
                     className="btn btn-primary daas-btn w-100"
-                    onClick={openBooking}
+                    onClick={() => openBooking('pricing')}
                   >
                     {plan.ctaLabel}
                   </button>
+                  <PaymentTrustNote />
                 </div>
               </div>
 
@@ -70,6 +85,21 @@ export default function PricingSection() {
                 </ul>
               </div>
             </article>
+
+            {compareItems.length ? (
+              <aside className="daas-pricing__compare" aria-label="Cost comparison">
+                <p className="daas-pricing__compare-eyebrow">{comparisons.eyebrow}</p>
+                <div className="daas-pricing__compare-grid">
+                  {compareItems.map((item) => (
+                    <div key={item.label} className="daas-pricing__compare-card">
+                      <p className="daas-pricing__compare-label">{item.label}</p>
+                      <p className="daas-pricing__compare-value">{item.value}</p>
+                      <p className="daas-pricing__compare-note mb-0">{item.note}</p>
+                    </div>
+                  ))}
+                </div>
+              </aside>
+            ) : null}
 
             {trustNotes?.length ? (
               <div className="daas-pricing__trust">

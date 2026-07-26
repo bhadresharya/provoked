@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import FullPageMenu, { useFullPageMenu } from '@/components/FullPageMenu';
@@ -14,24 +14,126 @@ const DESKTOP_LINKS = [
   { label: 'FAQ', href: '/#faq' },
 ];
 
+const TOP_ALWAYS_SHOW = 72;
+const HIDE_DELTA = 16;
+const SHOW_DELTA = 12;
+const COOLDOWN_MS = 220;
+const ARM_MS = 420;
+
+function readScrollY() {
+  return window.scrollY || document.documentElement.scrollTop || 0;
+}
+
 export default function Header() {
   const { isOpen, isClosing, isToggled, isDisabled, toggleMenu, handleNavigate } =
     useFullPageMenu();
   const { openBooking } = useBooking();
-  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastYRef = useRef(0);
+  const hiddenRef = useRef(false);
+  const cooldownUntilRef = useRef(0);
+  const armedUntilRef = useRef(0);
+  const tickingRef = useRef(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    hiddenRef.current = hidden;
+  }, [hidden]);
+
+  useEffect(() => {
+    lastYRef.current = readScrollY();
+
+    const setHiddenSafe = (next) => {
+      if (hiddenRef.current === next) return;
+      hiddenRef.current = next;
+      setHidden(next);
+    };
+
+    const arm = () => {
+      armedUntilRef.current = performance.now() + ARM_MS;
+    };
+
+    const onScroll = () => {
+      if (tickingRef.current) return;
+      tickingRef.current = true;
+
+      window.requestAnimationFrame(() => {
+        tickingRef.current = false;
+
+        const y = readScrollY();
+        const now = performance.now();
+        const delta = y - lastYRef.current;
+        const userIntent = now <= armedUntilRef.current;
+
+        if (isOpen || y <= TOP_ALWAYS_SHOW) {
+          setHiddenSafe(false);
+          lastYRef.current = y;
+          return;
+        }
+
+        // Layout shifts (board animation, fonts, etc.) also fire scroll.
+        // Only hide/show when the user recently scrolled.
+        if (!userIntent) {
+          lastYRef.current = y;
+          return;
+        }
+
+        if (now < cooldownUntilRef.current) {
+          lastYRef.current = y;
+          return;
+        }
+
+        if (delta > HIDE_DELTA) {
+          setHiddenSafe(true);
+          cooldownUntilRef.current = now + COOLDOWN_MS;
+        } else if (delta < -SHOW_DELTA) {
+          setHiddenSafe(false);
+          cooldownUntilRef.current = now + COOLDOWN_MS;
+        }
+
+        lastYRef.current = y;
+      });
+    };
+
+    const onKeyDown = (event) => {
+      if (
+        event.key === 'ArrowUp' ||
+        event.key === 'ArrowDown' ||
+        event.key === 'PageUp' ||
+        event.key === 'PageDown' ||
+        event.key === 'Home' ||
+        event.key === 'End' ||
+        event.key === ' '
+      ) {
+        arm();
+      }
+    };
+
+    const onPointerDown = (event) => {
+      // Cover scrollbar drags near the viewport edge.
+      if (event.clientX >= window.innerWidth - 24) arm();
+    };
+
+    window.addEventListener('wheel', arm, { passive: true });
+    window.addEventListener('touchstart', arm, { passive: true });
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('pointerdown', onPointerDown);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    onScroll();
+
+    return () => {
+      window.removeEventListener('wheel', arm);
+      window.removeEventListener('touchstart', arm);
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('pointerdown', onPointerDown);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [isOpen]);
 
   const headerClass = [
     'header',
     'daas-header',
-    scrolled && 'daas-header--scrolled',
-    isToggled && 'daas-header--menu-open',
+    hidden ? 'daas-header--hidden' : '',
+    isToggled ? 'daas-header--menu-open' : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -68,7 +170,7 @@ export default function Header() {
                   <button
                     type="button"
                     className="btn btn-sm daas-btn-sm daas-header__ghost"
-                    onClick={openBooking}
+                    onClick={() => openBooking('header')}
                   >
                     Book a call
                   </button>
@@ -104,7 +206,7 @@ export default function Header() {
         onNavigate={handleNavigate}
         onBookCall={() => {
           handleNavigate();
-          window.setTimeout(openBooking, 320);
+          window.setTimeout(() => openBooking('full_page_menu'), 320);
         }}
       />
     </>

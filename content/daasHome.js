@@ -2,7 +2,9 @@ export const DAAS_HERO = {
   eyebrow: 'Design on subscription',
   title: 'Your design team — without the full-time hire.',
   description:
-    'For startups and growing businesses that need sharp creatives every week, not another salary on the books. Pause or cancel anytime.',
+    'Flat monthly design for founders who ship every week — pitch decks, product UI, and campaigns — without another salary on the books. Pause or cancel anytime.',
+  bestFor:
+    'Best for early–growth startups and lean marketing teams that need senior output on a fixed monthly budget.',
   primaryCta: { label: 'See pricing', href: '#pricing' },
   secondaryCta: { label: 'Book a 15-min intro call' },
 };

@@ -37,7 +37,7 @@ export default function MeetStudio() {
                     {paragraph}
                   </p>
                 ))}
-                <button type="button" className="btn btn-primary daas-btn" onClick={openBooking}>
+                <button type="button" className="btn btn-primary daas-btn" onClick={() => openBooking('meet_studio')}>
                   {ctaLabel}
                 </button>
               </div>

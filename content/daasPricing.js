@@ -6,7 +6,7 @@ export const DAAS_PRICING = {
     'Less than a junior designer’s monthly cost — with senior output and no hiring overhead.',
   plan: {
     id: 'monthly',
-    name: 'Monthly plan',
+    name: 'Provoked Monthly Club',
     pauseLabel: 'Pause or cancel anytime',
     highlight: 'Best for startups shipping every week',
     price: {
@@ -25,26 +25,21 @@ export const DAAS_PRICING = {
     ],
     ctaLabel: 'Book a 15 min intro call',
   },
-  comparisons: [
-    {
-      label: 'Full-time hire',
-      value: '₹60k–1.2L+',
-      note: 'CTC + tools + management',
-      tone: 'muted',
-    },
-    {
-      label: 'Agency retainer',
-      value: '₹1.5L–3L+',
-      note: 'Slow process, surprise invoices',
-      tone: 'muted',
-    },
-    {
-      label: 'Provoked',
-      value: '₹49,990',
-      note: 'Flat fee. Pause anytime.',
-      tone: 'featured',
-    },
-  ],
+  comparisons: {
+    eyebrow: 'Compared to',
+    items: [
+      {
+        label: 'Full-time hire',
+        value: '₹60k–1.2L+',
+        note: 'CTC + tools + management',
+      },
+      {
+        label: 'Agency retainer',
+        value: '₹1.5L–3L+',
+        note: 'Slow process, surprise invoices',
+      },
+    ],
+  },
   trustNotes: [
     {
       title: 'Pause when you need to',
@@ -54,7 +49,7 @@ export const DAAS_PRICING = {
     {
       title: 'Talk before you pay',
       description:
-        'Not sure if it fits your team? Book a 15-min intro call and we’ll walk you through the board.',
+        'Book a 15-min intro call first. If we’re a fit, you pay through a Razorpay link we send — not a checkout button on this page.',
     },
     {
       title: 'No long contracts',

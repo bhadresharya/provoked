@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useBooking } from '@/components/daas/BookingProvider';
+import PaymentTrustNote from '@/components/daas/PaymentTrustNote';
 import { DAAS_START } from '@/content/daasStart';
 
 export default function HowYouStart() {
-  const { id, eyebrow, title, description, steps, ctaLabel } = DAAS_START;
+  const { id, eyebrow, title, description, path, steps, ctaLabel, ctaNote } = DAAS_START;
   const { openBooking } = useBooking();
 
   return (
@@ -20,9 +21,16 @@ export default function HowYouStart() {
                 {title}
               </h2>
               <p className="daas-start__lead">{description}</p>
-              <p className="daas-start__path" aria-hidden="true">
-                Call <span>→</span> Invoice <span>→</span> Notion <span>→</span> First brief
-              </p>
+              {path?.length ? (
+                <p className="daas-start__path" aria-hidden="true">
+                  {path.map((item, index) => (
+                    <span key={item}>
+                      {index > 0 ? ' → ' : ''}
+                      {item}
+                    </span>
+                  ))}
+                </p>
+              ) : null}
             </header>
 
             <ol className="daas-start__steps list-unstyled mb-5">
@@ -47,11 +55,12 @@ export default function HowYouStart() {
             </ol>
 
             <div className="daas-start__cta">
-              <button type="button" className="btn btn-primary daas-btn" onClick={openBooking}>
+              <button type="button" className="btn btn-primary daas-btn" onClick={() => openBooking('how_you_start')}>
                 {ctaLabel}
                 <ArrowRight size={18} strokeWidth={2.25} aria-hidden="true" />
               </button>
-              <p className="daas-start__cta-note mb-0">Talk first. Pay only if it’s a fit.</p>
+              <p className="daas-start__cta-note mb-0">{ctaNote}</p>
+              <PaymentTrustNote />
             </div>
           </div>
         </div>

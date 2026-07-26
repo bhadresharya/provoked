@@ -13,9 +13,9 @@ export const DAAS_START = {
     },
     {
       number: '02',
-      title: 'Pay the invoice',
+      title: 'Pay via Razorpay link',
       description:
-        'If it’s a yes, we send an invoice for ₹49,990. Pay via UPI or bank transfer. GST-ready invoicing on request.',
+        'If it’s a yes, we send a secure Razorpay payment link. Pay with UPI, cards, or netbanking — no checkout on this site.',
     },
     {
       number: '03',
@@ -30,5 +30,7 @@ export const DAAS_START = {
         'Add the first request to the queue. We pick it up as the active job and start shipping in 24–48 hours on average.',
     },
   ],
+  path: ['Call', 'Razorpay link', 'Board', 'First brief'],
   ctaLabel: 'Book a 15-min intro call',
+  ctaNote: 'Talk first. Pay only if it’s a fit.',
 };
