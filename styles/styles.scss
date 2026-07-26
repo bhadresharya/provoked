@@ -361,7 +361,33 @@ main.daas-home {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: $gray-600;
+}
 
+.daas-eyebrow--on-dark {
+    color: rgba($white, 0.55);
+}
+
+.daas-draft-badge {
+    display: inline-block;
+    margin: 0 0 0.85rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 0.35rem;
+    background: rgba($primary, 0.1);
+    border: 1px solid rgba($primary, 0.22);
+    color: $primary;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    &--on-media {
+        position: absolute;
+        left: 0.85rem;
+        bottom: 0.85rem;
+        margin: 0;
+        z-index: 1;
+        background: rgba($white, 0.94);
+    }
 }
 
 .daas-section {
@@ -664,29 +690,35 @@ main.daas-home {
 
     &__step-inner {
         display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 1.25rem 1.75rem;
+        grid-template-columns: 5rem minmax(0, 1fr);
+        column-gap: 1.75rem;
+        row-gap: 0.75rem;
         align-items: start;
 
         @include media-breakpoint-down(sm) {
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
+            grid-template-columns: 5rem minmax(0, 1fr);
+            column-gap: 1.15rem;
         }
     }
 
     &__number {
+        display: block;
+        width: 5rem;
         font-weight: 800;
         font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-variant-numeric: tabular-nums;
         letter-spacing: -0.04em;
-        line-height: 0.9;
+        line-height: 1;
         color: $primary;
+        text-align: left;
     }
 
     &__title {
         font-weight: 800;
         font-size: clamp(1.5rem, 2.5vw, 1.85rem);
         letter-spacing: -0.02em;
-        margin-bottom: 0.45rem;
+        margin: 0 0 0.45rem;
+        line-height: 1.15;
         color: $dark;
     }
 
@@ -702,6 +734,7 @@ main.daas-home {
         min-width: 0;
         max-width: 34rem;
         width: 100%;
+        padding-top: 0.35rem; // optically align title with number top
     }
 
 
@@ -712,6 +745,188 @@ main.daas-home {
         color: $gray-600;
         font-size: 1.05rem;
         line-height: 1.7;
+    }
+}
+
+.daas-start {
+    background: $white;
+    overflow: hidden;
+
+    &__header {
+        margin-bottom: 3rem;
+    }
+
+    &__headline {
+        font-weight: 800;
+        font-size: clamp(1.95rem, 4vw, 3.1rem);
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        margin: 0 auto 0.85rem;
+        max-width: 18ch;
+        color: $dark;
+    }
+
+    &__lead {
+        max-width: 34rem;
+        margin: 0 auto 1.25rem;
+        color: $gray-600;
+        font-size: 1.0625rem;
+        line-height: 1.65;
+    }
+
+    &__path {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.35rem 0.45rem;
+        margin: 0;
+        padding: 0.55rem 1rem;
+        border-radius: 999px;
+        background: rgba($primary, 0.06);
+        border: 1px solid rgba($primary, 0.14);
+        color: $dark;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+
+        span {
+            color: $primary;
+            font-weight: 700;
+        }
+    }
+
+    &__steps {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin: 0 0 2.75rem;
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            max-width: 34rem;
+            margin-inline: auto;
+        }
+    }
+
+    &__step {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+        padding: 0 1.15rem 0 0;
+
+        @include media-breakpoint-up(lg) {
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 1.35rem;
+                left: 3.5rem;
+                right: 0.75rem;
+                height: 1px;
+                background: linear-gradient(
+                    90deg,
+                    rgba($primary, 0.55),
+                    rgba($dark, 0.12)
+                );
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 1.15rem;
+            padding: 0 0 2.25rem;
+
+            &:not(:last-child)::before {
+                content: '';
+                position: absolute;
+                left: 1.35rem;
+                top: 2.75rem;
+                bottom: 0.35rem;
+                width: 1px;
+                background: linear-gradient(
+                    180deg,
+                    rgba($primary, 0.45),
+                    rgba($dark, 0.1)
+                );
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &__marker {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+    }
+
+    &__number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 999px;
+        background: $daas-hero-dark;
+        color: $white;
+        font-weight: 800;
+        font-size: 0.85rem;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        box-shadow: 0 0 0 6px $white;
+    }
+
+    &__connector {
+        display: none;
+    }
+
+    &__body {
+        min-width: 0;
+        padding-top: 0.2rem;
+    }
+
+    &__title {
+        font-size: 1.08rem;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        margin: 0 0 0.45rem;
+        color: $dark;
+        line-height: 1.25;
+    }
+
+    &__text {
+        color: $gray-600;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        max-width: 22rem;
+    }
+
+    &__cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        text-align: center;
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+    }
+
+    &__cta-note {
+        color: $gray-600;
+        font-size: 0.9rem;
     }
 }
 
@@ -937,11 +1152,16 @@ main.daas-home {
         overflow: hidden;
         background: $daas-page-bg;
         border: 1px solid rgba($dark, 0.06);
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
             transform: translateY(-4px);
             box-shadow: 0 18px 40px rgba($dark, 0.1);
+            outline: none;
         }
     }
 
@@ -1031,7 +1251,7 @@ main.daas-home {
         justify-content: center;
     }
 
-    .daas-work__card:nth-child(n + 9) {
+    .daas-work__card:nth-child(n + 5) {
         display: none;
     }
 }
@@ -1650,3 +1870,319 @@ main.daas-home {
         }
     }
 }
+
+.daas-work-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: rgba($dark, 0.55);
+    backdrop-filter: blur(6px);
+
+    &__panel {
+        position: relative;
+        width: min(720px, 100%);
+        max-height: min(88vh, 900px);
+        overflow: auto;
+        border-radius: 1.15rem;
+        background: $white;
+        box-shadow: 0 24px 64px rgba($dark, 0.28);
+    }
+
+    &__close {
+        position: absolute;
+        top: 0.85rem;
+        right: 0.85rem;
+        z-index: 2;
+        width: 2.25rem;
+        height: 2.25rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        background: rgba($white, 0.92);
+        color: $dark;
+    }
+
+    &__media {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        background: $gray-200;
+    }
+
+    &__image {
+        object-fit: cover;
+    }
+
+    &__body {
+        padding: 1.5rem 1.5rem 1.75rem;
+    }
+
+    &__title {
+        font-size: 1.35rem;
+        font-weight: 800;
+        margin: 0.35rem 0 1rem;
+        color: $dark;
+    }
+
+    &__block {
+        color: $gray-700;
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin-bottom: 0.85rem;
+    }
+}
+
+.daas-proof {
+    background: $daas-page-bg;
+
+    &__header {
+        margin-bottom: 2.5rem;
+    }
+
+    &__headline {
+        font-weight: 800;
+        font-size: clamp(1.85rem, 3.5vw, 2.85rem);
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin: 0 auto 0.85rem;
+        max-width: 18ch;
+        color: $dark;
+    }
+
+    &__lead {
+        max-width: 34rem;
+        margin: 0 auto;
+        color: $gray-600;
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+
+    &__logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__logo-slot {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 7.5rem;
+        height: 3rem;
+        padding: 0 1rem;
+        border-radius: 0.65rem;
+        border: 1px dashed rgba($dark, 0.2);
+        background: rgba($white, 0.7);
+        color: $gray-600;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    &__quotes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            max-width: 36rem;
+            margin-inline: auto;
+        }
+    }
+
+    &__quote {
+        margin: 0;
+        padding: 1.5rem 1.35rem;
+        border-radius: 1.1rem;
+        background: $white;
+        border: 1px solid rgba($dark, 0.08);
+    }
+
+    &__quote-text {
+        margin: 0 0 1.15rem;
+        color: $dark;
+        font-size: 1rem;
+        line-height: 1.55;
+        font-weight: 500;
+    }
+
+    &__quote-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    &__quote-name {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: $dark;
+    }
+
+    &__quote-role {
+        color: $gray-600;
+        font-size: 0.85rem;
+    }
+}
+
+.daas-studio {
+    background: $daas-hero-dark;
+    color: $white;
+
+    &__panel {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 2rem;
+        align-items: center;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            max-width: 28rem;
+            margin-inline: auto;
+            text-align: center;
+        }
+    }
+
+    &__media {
+        position: relative;
+        border-radius: 1.15rem;
+        overflow: hidden;
+        background: rgba($white, 0.06);
+    }
+
+    &__photo {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__headline {
+        font-weight: 800;
+        font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin-bottom: 0.85rem;
+        color: $white;
+    }
+
+    &__name {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: $white;
+    }
+
+    &__role {
+        margin: 0.2rem 0 1.25rem;
+        color: rgba($white, 0.6);
+        font-size: 0.95rem;
+    }
+
+    &__letter {
+        margin: 0 0 1rem;
+        color: rgba($white, 0.78);
+        font-size: 1.02rem;
+        line-height: 1.65;
+        max-width: 34rem;
+
+        @include media-breakpoint-down(lg) {
+            margin-inline: auto;
+        }
+    }
+
+    &__copy .btn {
+        margin-top: 0.5rem;
+    }
+}
+
+.daas-guarantee {
+    background: $daas-page-bg;
+
+    &__header {
+        margin-bottom: 2.5rem;
+    }
+
+    &__headline {
+        font-weight: 800;
+        font-size: clamp(1.85rem, 3.5vw, 2.85rem);
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin: 0 auto 0.85rem;
+        max-width: 16ch;
+        color: $dark;
+    }
+
+    &__lead {
+        max-width: 34rem;
+        margin: 0 auto;
+        color: $gray-600;
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__card {
+        padding: 1.5rem 1.35rem;
+        border-radius: 1.1rem;
+        background: $white;
+        border: 1px solid rgba($dark, 0.08);
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-bottom: 0.85rem;
+        border-radius: 0.65rem;
+        background: rgba($primary, 0.08);
+        color: $primary;
+    }
+
+    &__title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin: 0 0 0.45rem;
+        color: $dark;
+    }
+
+    &__text {
+        color: $gray-600;
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    &__faq {
+        a {
+            color: $primary;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover,
+            &:focus-visible {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+

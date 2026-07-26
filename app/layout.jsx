@@ -11,7 +11,7 @@ const manrope = Manrope({
 export const metadata = {
   title: 'Provoked Pixels — Design subscription for startups',
   description:
-    'Flat ₹29,990/month design subscription for founders and growing businesses. Pitch decks, product UI, campaigns, and event visuals in 24–48 hours. Pause anytime.',
+    'Flat ₹49,990/month design subscription for founders and growing businesses. Pitch decks, product UI, campaigns, and event visuals in 24–48 hours. Pause anytime.',
 };
 
 export default function RootLayout({ children }) {

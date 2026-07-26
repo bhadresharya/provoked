@@ -9,13 +9,14 @@ export const DAAS_HERO = {
 
 export const DAAS_HOW_IT_WORKS = {
   id: 'how-it-works',
+  eyebrow: 'How it works',
   title: 'Simple process. No agency drama.',
   steps: [
     {
       number: '01',
-      title: 'Subscribe',
+      title: 'Get started',
       description:
-        'Pick the monthly plan. We set up your Notion board and you’re ready to brief — usually within a day.',
+        'Book a 15-min intro call. If it’s a fit: we send an invoice → you pay → we open your Notion board — usually within a day.',
     },
     {
       number: '02',
@@ -53,7 +54,7 @@ export const DAAS_BENEFITS = {
       accent: 'amber',
       title: 'One flat fee',
       description:
-        '₹29,990 / month. Same price every cycle — no hourly creep, no surprise invoices after “small changes”.',
+        '₹49,990 / month. Same price every cycle — no hourly creep, no surprise invoices after “small changes”.',
     },
     {
       icon: 'speed',

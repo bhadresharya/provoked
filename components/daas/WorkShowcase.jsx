@@ -1,12 +1,28 @@
 'use client';
 
+import { useEffect, useId, useState } from 'react';
 import Image from 'next/image';
+import { X } from 'lucide-react';
 import { DAAS_WORK } from '@/content/daasWork';
 
 export default function WorkShowcase() {
   const { id, eyebrow, title, description, ctaLabel, ctaHref, capabilities, items } = DAAS_WORK;
-  // Duplicate for seamless marquee feel on wide screens
   const gallery = [...items, ...items];
+  const [active, setActive] = useState(null);
+  const titleId = useId();
+
+  useEffect(() => {
+    if (!active) return undefined;
+    const onKey = (event) => {
+      if (event.key === 'Escape') setActive(null);
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.classList.add('overflow-hidden');
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [active]);
 
   return (
     <section id={id} className="daas-section daas-work" aria-labelledby="daas-work-heading">
@@ -30,10 +46,13 @@ export default function WorkShowcase() {
       <div className="daas-work__rail" aria-label="Recent project gallery">
         <div className="daas-work__track">
           {gallery.map((item, index) => (
-            <article
+            <button
+              type="button"
               key={`${item.id}-${index}`}
               className="daas-work__card"
               aria-hidden={index >= items.length ? true : undefined}
+              tabIndex={index >= items.length ? -1 : 0}
+              onClick={() => setActive(item)}
             >
               <div className="daas-work__media">
                 {item.video ? (
@@ -60,7 +79,7 @@ export default function WorkShowcase() {
                 <span className="daas-work__tag">{item.tag}</span>
                 <h3 className="daas-work__title">{item.title}</h3>
               </div>
-            </article>
+            </button>
           ))}
         </div>
       </div>
@@ -78,6 +97,57 @@ export default function WorkShowcase() {
           </div>
         </div>
       </div>
+
+      {active ? (
+        <div
+          className="daas-work-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
+          onClick={() => setActive(null)}
+        >
+          <div className="daas-work-modal__panel" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="daas-work-modal__close"
+              aria-label="Close case study"
+              onClick={() => setActive(null)}
+            >
+              <X size={20} aria-hidden="true" />
+            </button>
+            <div className="daas-work-modal__media">
+              <Image
+                src={active.image}
+                alt={active.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 560px"
+                className="daas-work-modal__image"
+              />
+            </div>
+            <div className="daas-work-modal__body">
+              <span className="daas-work__tag">{active.tag}</span>
+              <h3 id={titleId} className="daas-work-modal__title">
+                {active.title}
+              </h3>
+              {active.problem ? (
+                <p className="daas-work-modal__block">
+                  <strong>Problem.</strong> {active.problem}
+                </p>
+              ) : null}
+              {active.work ? (
+                <p className="daas-work-modal__block">
+                  <strong>Work.</strong> {active.work}
+                </p>
+              ) : null}
+              {active.outcome ? (
+                <p className="daas-work-modal__block mb-0">
+                  <strong>Outcome.</strong> {active.outcome}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

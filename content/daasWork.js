@@ -28,6 +28,10 @@ export const DAAS_WORK = {
       image: '/images/abhyudaya-ornaments.png',
       video: null,
       tag: 'Brand identity',
+      problem:
+        'A jewellery business needed a premium identity that felt modern without losing traditional craft cues.',
+      work: 'Logo system, colour and type, and brand applications ready for packaging and digital.',
+      outcome: 'A cohesive brand base the team can reuse across festivals, retail, and campaigns.',
     },
     {
       id: 'abhyudaya-social',
@@ -35,48 +39,10 @@ export const DAAS_WORK = {
       image: '/images/abhyudaya-ornaments-vertical.png',
       video: null,
       tag: 'Social creatives',
-    },
-    {
-      id: 'conference-stage',
-      title: 'Summit stage loops',
-      image: '/images/img/1.jpg',
-      video: null,
-      tag: 'LED / 4K',
-    },
-    {
-      id: 'event-landing',
-      title: 'Event registration page',
-      image: '/images/img/2.jpg',
-      video: null,
-      tag: 'Landing pages',
-    },
-    {
-      id: 'framer-saas',
-      title: 'SaaS marketing site',
-      image: '/images/img/3.jpg',
-      video: null,
-      tag: 'Framer',
-    },
-    {
-      id: 'product-ui',
-      title: 'B2B product UI',
-      image: '/images/img/4.jpg',
-      video: null,
-      tag: 'UI/UX',
-    },
-    {
-      id: 'ai-workflow',
-      title: 'Brand workflow system',
-      image: '/images/img/5.jpg',
-      video: null,
-      tag: 'AI systems',
-    },
-    {
-      id: 'brand-refresh',
-      title: 'Brand refresh',
-      image: '/images/img/6.jpg',
-      video: null,
-      tag: 'Guidelines',
+      problem:
+        'Festival season needed a burst of on-brand creatives without hiring a full campaign team.',
+      work: 'Social templates and festival campaign visuals aligned to the new identity.',
+      outcome: 'Faster seasonal launches with consistent jewellery-brand polish across channels.',
     },
   ],
 };

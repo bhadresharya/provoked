@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { DAAS_HOW_IT_WORKS } from '@/content/daasHome';
 
 export default function HowItWorks() {
-  const { id, title, steps, story } = DAAS_HOW_IT_WORKS;
+  const { id, eyebrow, title, steps, story } = DAAS_HOW_IT_WORKS;
 
   return (
     <section id={id} className="daas-section daas-how" aria-labelledby="daas-how-heading">
@@ -12,6 +12,7 @@ export default function HowItWorks() {
         <div className="row">
           <div className="col-lg-10 mx-auto">
             <header className="daas-how__header text-center">
+              <p className="daas-eyebrow">{eyebrow}</p>
               <h2 id="daas-how-heading" className="daas-how__headline">
                 {title}
               </h2>

@@ -10,7 +10,7 @@ export const DAAS_PRICING = {
     pauseLabel: 'Pause or cancel anytime',
     highlight: 'Best for startups shipping every week',
     price: {
-      display: '₹29,990',
+      display: '₹49,990',
       suffix: '/month',
     },
     features: [
@@ -40,7 +40,7 @@ export const DAAS_PRICING = {
     },
     {
       label: 'Provoked',
-      value: '₹29,990',
+      value: '₹49,990',
       note: 'Flat fee. Pause anytime.',
       tone: 'featured',
     },

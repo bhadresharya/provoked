@@ -12,7 +12,7 @@ export const DAAS_FAQS = {
     {
       question: 'How does onboarding work?',
       answer:
-        'After you subscribe, we add you to a Notion design board — usually within a day. Accept the invite, drop your first brief, and you’re live. How to request is written on the board itself.',
+        'Start with a 15-min intro call. If we’re a fit, we send an invoice — you pay, then we add you to a Notion design board (usually within a day). Accept the invite, drop your first brief, and you’re live. How to request is written on the board itself.',
     },
     {
       question: 'Who actually does the work?',
@@ -32,7 +32,7 @@ export const DAAS_FAQS = {
     {
       question: 'How does this compare to hiring a designer?',
       answer:
-        'A solid full-time designer often costs well above ₹50–80k+ per month once you add CTC, tools, and management time — and you still get one skill set. This plan gives you multi-disciplinary design for ₹29,990 / month, with the option to pause.',
+        'A solid full-time designer often costs well above ₹50–80k+ per month once you add CTC, tools, and management time — and you still get one skill set. This plan gives you multi-disciplinary design for ₹49,990 / month, with the option to pause.',
     },
     {
       question: 'What if I don’t like a design?',
@@ -52,7 +52,7 @@ export const DAAS_FAQS = {
     {
       question: 'What’s the price?',
       answer:
-        '₹29,990 per month. One number, GST-ready invoicing on request, pause or cancel anytime — no long-term contract.',
+        '₹49,990 per month. One number, GST-ready invoicing on request, pause or cancel anytime — no long-term contract.',
     },
   ],
 };

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="480" viewBox="0 0 400 480" fill="none">
+  <rect width="400" height="480" fill="#E8E6E3"/>
+  <circle cx="200" cy="180" r="72" fill="#C8C4BE"/>
+  <ellipse cx="200" cy="380" rx="120" ry="100" fill="#C8C4BE"/>
+  <text x="200" y="455" text-anchor="middle" fill="#6B6560" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Draft photo</text>
+</svg>
