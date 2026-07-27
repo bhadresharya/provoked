@@ -40,6 +40,11 @@ export const DAAS_FAQS = {
         'We revise the active request until you’re happy. You’re not stuck with a “final” file you wouldn’t show an investor or customer.',
     },
     {
+      question: 'What counts as a revision vs a new request?',
+      answer:
+        'Feedback on the active deliverable is a revision, and we keep iterating on that piece. A different asset, a fresh brief, or a new direction after sign-off starts a new request in the queue so timelines stay predictable.',
+    },
+    {
       question: 'What don’t you take on?',
       answer:
         'We don’t do custom software development, heavy 3D, video shoots, physical print production, magazines/books, or media buying. If something’s outside scope, we’ll say so before starting.',

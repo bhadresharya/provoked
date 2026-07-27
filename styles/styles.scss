@@ -1474,122 +1474,268 @@ main:not(.daas-home) {
 }
 
 .daas-work {
-    background: $white;
+    background: $daas-page-bg;
     overflow: hidden;
 
-    &__header {
-        margin-bottom: 2.75rem;
+    &__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.7fr) minmax(0, 0.85fr);
+        gap: 1.15rem;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            max-width: 36rem;
+            margin-inline: auto;
+        }
     }
 
-    &__headline {
-        font-weight: 800;
-        font-size: clamp(2rem, 4.5vw, 3.35rem);
-        letter-spacing: -0.035em;
-        line-height: 1.1;
-        margin: 0 auto 0.85rem;
-        max-width: 18ch;
-        color: $dark;
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        min-height: 28rem;
+        padding: 1.75rem 1.5rem 1.85rem;
+        background: $white;
+        border: 1px solid rgba($dark, 0.07);
+        border-radius: 1.35rem;
+
+        @include media-breakpoint-up(md) {
+            min-height: 32rem;
+            padding: 2rem 1.85rem 2rem;
+        }
     }
 
-    &__lead {
-        max-width: 32rem;
-        margin: 0 auto 1.5rem;
-        color: $gray-600;
-        font-size: 1.0625rem;
-        line-height: 1.65;
-    }
-
-    &__cta {
-        border-radius: 0.625rem;
-    }
-
-    &__rail {
-        margin: 0 0 2.75rem;
+    &__panel--gallery {
+        position: relative;
         overflow: hidden;
-        mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+
+        @include media-breakpoint-up(lg) {
+            padding-inline: 2.15rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: auto -10% 42% -15%;
+            height: 55%;
+            background: radial-gradient(ellipse at center, rgba($primary, 0.08), transparent 68%);
+            pointer-events: none;
+        }
+    }
+
+    &__panel--scope {
+        position: relative;
+        overflow: hidden;
+
+        @include media-breakpoint-up(lg) {
+            padding-inline: 1.35rem;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 7.5rem;
+            height: 7.5rem;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.55;
+        }
+
+        &::before {
+            top: -2.5rem;
+            left: -2.75rem;
+            background: radial-gradient(circle, rgba($primary, 0.18), transparent 70%);
+        }
+
+        &::after {
+            right: -2.25rem;
+            bottom: 5.5rem;
+            background: radial-gradient(circle, rgba($dark, 0.08), transparent 70%);
+        }
+    }
+
+    &__collage {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        min-height: 12.5rem;
+        margin: 0.75rem -0.5rem 0.5rem;
+        padding: 0.85rem 0 1.15rem;
+        -webkit-mask-image: linear-gradient(
+            90deg,
+            transparent 0%,
+            #000 10%,
+            #000 90%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            90deg,
+            transparent 0%,
+            #000 10%,
+            #000 90%,
+            transparent 100%
+        );
+
+        @include media-breakpoint-up(md) {
+            min-height: 14.5rem;
+            margin-inline: -0.75rem;
+            padding: 1rem 0 1.35rem;
+        }
     }
 
     &__track {
         display: flex;
-        gap: 1.15rem;
+        align-items: center;
         width: max-content;
-        padding: 0.25rem 1.25rem 1rem;
-        animation: daas-work-scroll 36s linear infinite;
+        padding-inline: 1rem;
+        animation: daas-work-scroll 48s linear infinite;
 
         &:hover {
             animation-play-state: paused;
         }
     }
 
-    &__card {
+    &__thumb {
+        position: relative;
         flex: 0 0 auto;
-        width: min(280px, 72vw);
-        border-radius: 1.15rem;
+        width: 9.5rem;
+        aspect-ratio: 1;
+        margin-inline: -0.7rem;
+        border-radius: 0.95rem;
         overflow: hidden;
-        background: $daas-page-bg;
-        border: 1px solid rgba($dark, 0.06);
-        padding: 0;
-        text-align: left;
-        // cursor: pointer; // restore with work detail modal
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        background: $gray-200;
+        border: 3px solid $white;
+        box-shadow: 0 14px 32px rgba($dark, 0.12);
+        transition:
+            transform 0.28s ease,
+            box-shadow 0.28s ease;
 
-        &:hover,
-        &:focus-visible {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 40px rgba($dark, 0.1);
-            outline: none;
+        @include media-breakpoint-up(md) {
+            width: 10.75rem;
+            margin-inline: -0.85rem;
+        }
+
+        &:hover {
+            z-index: 5;
+            box-shadow: 0 20px 40px rgba($dark, 0.16);
         }
     }
 
-    &__media {
-        position: relative;
-        aspect-ratio: 4 / 5;
-        background: $gray-200;
-        overflow: hidden;
+    &__thumb--0 {
+        transform: rotate(-9deg) translateY(0.65rem);
+        z-index: 1;
+
+        &:hover {
+            transform: rotate(-5deg) translateY(0);
+        }
     }
 
-    &__image,
-    &__video {
+    &__thumb--1 {
+        transform: rotate(4deg) translateY(-0.35rem);
+        z-index: 2;
+
+        &:hover {
+            transform: rotate(1deg) translateY(-0.65rem);
+        }
+    }
+
+    &__thumb--2 {
+        transform: rotate(11deg) translateY(0.85rem);
+        z-index: 1;
+
+        &:hover {
+            transform: rotate(7deg) translateY(0.2rem);
+        }
+    }
+
+    &__thumb--3 {
+        transform: rotate(-3deg) translateY(-0.15rem);
+        z-index: 2;
+
+        &:hover {
+            transform: rotate(0deg) translateY(-0.5rem);
+        }
+    }
+
+    &__image {
         object-fit: cover;
     }
 
-    &__video {
-        width: 100%;
-        height: 100%;
+    &__copy {
+        position: relative;
+        z-index: 1;
+        max-width: 18rem;
     }
 
-    &__meta {
-        padding: 0.95rem 1.05rem 1.15rem;
+    &__copy--scope {
+        max-width: 16rem;
     }
 
-    &__tag {
-        display: inline-block;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: $primary;
-        margin-bottom: 0.3rem;
-    }
-
-    &__title {
-        font-size: 1rem;
-        font-weight: 700;
-        margin: 0;
-        line-height: 1.3;
+    &__headline {
+        font-weight: 800;
+        font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        margin: 0 0 0.55rem;
         color: $dark;
     }
 
+    &__scope-title {
+        font-weight: 800;
+        font-size: clamp(1.55rem, 2.6vw, 2.05rem);
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin: 0 0 0.55rem;
+        color: $dark;
+    }
+
+    &__lead {
+        margin: 0 0 1.25rem;
+        color: $gray-600;
+        font-size: 0.98rem;
+        line-height: 1.55;
+    }
+
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border-radius: 0.625rem;
+    }
+
     &__caps {
+        position: relative;
+        z-index: 1;
         display: flex;
         flex-wrap: wrap;
+        align-content: center;
         justify-content: center;
-        gap: 0.55rem;
+        gap: 0.5rem;
         list-style: none;
-        margin: 0;
-        padding: 0;
-        max-width: 48rem;
-        margin-inline: auto;
+        margin: 0.75rem 0 0;
+        padding: 0.5rem 0.25rem;
+        min-height: 13.5rem;
+
+        @include media-breakpoint-up(md) {
+            min-height: 15.5rem;
+            padding: 0.75rem 0.5rem;
+        }
+
+        li {
+            &:nth-child(3n) .daas-work__cap {
+                transform: rotate(-2.5deg);
+            }
+
+            &:nth-child(4n) .daas-work__cap {
+                transform: rotate(2deg);
+            }
+
+            &:nth-child(5n) .daas-work__cap {
+                transform: rotate(-1deg);
+            }
+        }
     }
 
     &__cap {
@@ -1597,13 +1743,29 @@ main:not(.daas-home) {
         align-items: center;
         padding: 0.55rem 0.9rem;
         border-radius: 999px;
-        background: $daas-page-bg;
-        border: 1px solid rgba($dark, 0.08);
+        background: $white;
+        border: 1px solid rgba($dark, 0.1);
+        box-shadow: 0 1px 0 rgba($dark, 0.03);
         color: $dark;
-        font-size: 0.85rem;
+        font-size: 0.84rem;
         font-weight: 600;
         line-height: 1;
         white-space: nowrap;
+        transition:
+            border-color 0.15s ease,
+            color 0.15s ease,
+            transform 0.2s ease;
+
+        &:hover {
+            border-color: rgba($primary, 0.35);
+            color: $primary;
+        }
+    }
+
+    &__cap--more {
+        border-color: rgba($primary, 0.28);
+        background: rgba($primary, 0.06);
+        color: $primary;
     }
 }
 
@@ -1620,15 +1782,19 @@ main:not(.daas-home) {
 @media (prefers-reduced-motion: reduce) {
     .daas-work__track {
         animation: none;
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 72rem;
-        margin: 0 auto;
-        justify-content: center;
     }
 
-    .daas-work__card--clone {
+    .daas-work__thumb--clone {
         display: none;
+    }
+
+    .daas-work__thumb,
+    .daas-work__thumb--0,
+    .daas-work__thumb--1,
+    .daas-work__thumb--2,
+    .daas-work__thumb--3,
+    .daas-work__caps li .daas-work__cap {
+        transform: none !important;
     }
 }
 
@@ -2092,6 +2258,25 @@ main:not(.daas-home) {
         line-height: 1.65;
         font-size: 0.975rem;
         max-width: 40rem;
+    }
+
+    &__more {
+        margin: 1rem 0 0;
+        color: $gray-600;
+        font-size: 0.925rem;
+        line-height: 1.55;
+
+        a {
+            color: $dark;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover,
+            &:focus-visible {
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -2558,136 +2743,6 @@ main:not(.daas-home) {
                 color: $primary;
             }
         }
-    }
-}
-
-.daas-work-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 1200;
-    background: rgba(18, 18, 20, 0.52);
-    backdrop-filter: blur(2px);
-
-    &__close {
-        position: absolute;
-        top: 0.7rem;
-        right: 0.85rem;
-        z-index: 3;
-        width: 2.5rem;
-        height: 2.5rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(18, 18, 20, 0.72);
-        color: $white;
-        cursor: pointer;
-        transition:
-            background 0.15s ease,
-            transform 0.15s ease;
-
-        @include media-breakpoint-up(md) {
-            top: 0.85rem;
-            right: 1.15rem;
-            width: 2.65rem;
-            height: 2.65rem;
-        }
-
-        &:hover,
-        &:focus-visible {
-            background: rgba(18, 18, 20, 0.9);
-            outline: none;
-        }
-
-        &:active {
-            transform: scale(0.96);
-        }
-    }
-
-    &__sheet {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 2.75rem;
-        z-index: 2;
-        overflow: auto;
-        overscroll-behavior: contain;
-        border-radius: 1rem 1rem 0 0;
-        background: $white;
-        box-shadow: 0 -12px 40px rgba($dark, 0.18);
-        -webkit-overflow-scrolling: touch;
-
-        @include media-breakpoint-up(md) {
-            top: 4.25rem;
-            border-radius: 1.15rem 1.15rem 0 0;
-        }
-    }
-
-    &__media {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: min(52vh, 560px);
-        padding: 1.25rem 1rem 0;
-        background: #f3f3f4;
-
-        @include media-breakpoint-up(md) {
-            min-height: min(62vh, 720px);
-            padding: 2rem 2rem 0;
-        }
-    }
-
-    &__image,
-    &__video {
-        display: block;
-        width: 100%;
-        max-width: 1100px;
-        height: auto;
-        max-height: min(68vh, 780px);
-        margin: 0 auto;
-        object-fit: contain;
-        border-radius: 0.5rem;
-        background: $white;
-    }
-
-    &__video {
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-    }
-
-    &__body {
-        width: min(720px, 100%);
-        margin: 0 auto;
-        padding: 1.5rem 1.25rem 3rem;
-
-        @include media-breakpoint-up(md) {
-            padding: 1.85rem 1.5rem 3.5rem;
-        }
-    }
-
-    &__title {
-        font-size: clamp(1.45rem, 2.5vw, 1.85rem);
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        margin: 0.35rem 0 1rem;
-        color: $dark;
-    }
-
-    &__block {
-        color: $gray-700;
-        font-size: 1rem;
-        line-height: 1.65;
-        margin-bottom: 0.85rem;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .daas-work-modal__sheet {
-        transform: none !important;
     }
 }
 

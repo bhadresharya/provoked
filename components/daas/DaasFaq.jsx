@@ -68,6 +68,10 @@ export default function DaasFaq() {
                 );
               })}
             </div>
+            <p className="daas-faq__more">
+              More questions? Prefer email?{' '}
+              <a href="mailto:hello@provoked.in?subject=DaaS%20FAQ%20question">hello@provoked.in</a>
+            </p>
           </div>
         </div>
       </div>
