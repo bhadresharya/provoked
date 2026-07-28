@@ -3,7 +3,7 @@ export const DAAS_GUARANTEE = {
   eyebrow: 'Guarantee',
   title: 'Revision policy, in plain words.',
   description:
-    'Confidence for a ~₹50k/month decision — not buried in an accordion.',
+    'Confidence for a ~₹49.9k/month decision — not buried in an accordion.',
   pillars: [
     {
       title: 'Revise until you’re happy',

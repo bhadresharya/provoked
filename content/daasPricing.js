@@ -13,6 +13,7 @@ export const DAAS_PRICING = {
       display: '₹49,990',
       suffix: '/month',
     },
+    gstNote: 'Prices exclusive of 18% GST.',
     features: [
       'One active request at a time',
       'Avg. 48-hour delivery',

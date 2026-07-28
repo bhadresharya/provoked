@@ -60,6 +60,7 @@ export default function PricingSection() {
                 <div className="daas-pricing__price">
                   <span className="daas-pricing__amount">{plan.price.display}</span>
                   <span className="daas-pricing__suffix">{plan.price.suffix}</span>
+                  {plan.gstNote ? <p className="daas-pricing__gst">{plan.gstNote}</p> : null}
                 </div>
                 <div className="daas-pricing__actions">
                   <button
@@ -78,8 +79,10 @@ export default function PricingSection() {
                 <ul className="daas-pricing__features">
                   {plan.features.map((feature) => (
                     <li key={feature}>
-                      <Check size={16} strokeWidth={2.25} aria-hidden="true" />
-                      <span>{feature}</span>
+                      <span className="daas-pricing__check" aria-hidden="true">
+                        <Check size={14} strokeWidth={2.75} />
+                      </span>
+                      <span className="daas-pricing__feature">{feature}</span>
                     </li>
                   ))}
                 </ul>
